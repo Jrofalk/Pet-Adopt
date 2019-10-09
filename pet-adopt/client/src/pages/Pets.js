@@ -10,9 +10,11 @@ class Pets extends Component {
   state = {
     pets: [],
     name: "",
+    userInfo: []
+
   };
- 
-  
+
+
   componentDidMount() {
     this.loadPets();
   }
@@ -40,18 +42,18 @@ class Pets extends Component {
 
   handleFormSubmit = event => {
     event.preventDefault();
-    if (this.state.title && this.state.authors) {
-      API.savePet({
-        title: this.state.title,
-        author: this.state.authors,
-        synopsis: this.state.description
-      })
-        .then(res => this.loadPets())
-        .catch(err => console.log(err));
-    }
+    // if (this.state.title && this.state.authors) {
+    //   API.savePet({
+    //     title: this.state.title,
+    //     author: this.state.authors,
+    //     synopsis: this.state.description
+    //   })
+    //     .then(res => this.loadPets())
+    //     .catch(err => console.log(err));
+    // }
   };
 
-render() {
+  render() {
     return (
       <Container fluid>
         <Row>
@@ -63,11 +65,13 @@ render() {
                 name="name"
                 placeholder="Name (Required)"
               />
-              <Select 
+              <Select value={this.state.userInfo}
+              onChange={this.handleInputChange}
+              name="userInfo"
               />
-              <Select 
+              <Select
               />
-              <Select 
+              <Select
               />
               <FormBtn
                 onClick={this.handleFormSubmit}
@@ -78,6 +82,7 @@ render() {
           </Col>
           <Col size="md-6 sm-12">
             {this.state.name}
+            {this.state.userInfo}
           </Col>
         </Row>
       </Container>
