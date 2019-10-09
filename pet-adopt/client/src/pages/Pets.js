@@ -6,28 +6,28 @@ import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
 import { Input, Select, FormBtn } from "../components/Form";
 
-class Books extends Component {
+class Pets extends Component {
   state = {
-    books: [],
+    pets: [],
     name: "",
   };
  
   
   componentDidMount() {
-    this.loadBooks();
+    this.loadPets();
   }
 
-  loadBooks = () => {
-    API.getBooks()
+  loadPets = () => {
+    API.getPets()
       .then(res =>
-        this.setState({ books: res.data, title: "", authors: "", synopsis: "" })
+        this.setState({ pets: res.data, title: "", authors: "", synopsis: "" })
       )
       .catch(err => console.log(err));
   };
 
-  deleteBook = id => {
-    API.deleteBook(id)
-      .then(res => this.loadBooks())
+  deletePet = id => {
+    API.deletePet(id)
+      .then(res => this.loadPets())
       .catch(err => console.log(err));
   };
 
@@ -41,16 +41,16 @@ class Books extends Component {
   handleFormSubmit = event => {
     event.preventDefault();
     if (this.state.title && this.state.authors) {
-      API.saveBook({
+      API.savePet({
         title: this.state.title,
         author: this.state.authors,
         synopsis: this.state.description
       })
-        .then(res => this.loadBooks())
+        .then(res => this.loadPets())
         .catch(err => console.log(err));
     }
   };
-//Replaced title with name
+
 render() {
     return (
       <Container fluid>
@@ -85,4 +85,4 @@ render() {
   }
 }
 
-export default Books;
+export default Pets;
