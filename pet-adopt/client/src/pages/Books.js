@@ -63,11 +63,11 @@ render() {
                 name="name"
                 placeholder="Name (Required)"
               />
-              <Select
+              <Select 
               />
-              <Select
+              <Select 
               />
-              <Select
+              <Select 
               />
               <FormBtn
                 onClick={this.handleFormSubmit}
