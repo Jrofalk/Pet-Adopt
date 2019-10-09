@@ -68,6 +68,7 @@ class Pets extends Component {
               <Select value={this.state.userInfo}
               onChange={this.handleInputChange}
               name="userInfo"
+              placeholder=""
               />
               <Select
               />
