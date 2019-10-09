@@ -9,9 +9,7 @@ import { Input, TextArea, FormBtn } from "../components/Form";
 class Books extends Component {
   state = {
     books: [],
-    title: "",
-    authors: "",
-    description: ""
+    name: "",
   };
  
   
@@ -52,33 +50,20 @@ class Books extends Component {
         .catch(err => console.log(err));
     }
   };
-
-  render() {
+//Replaced title with name
+render() {
     return (
       <Container fluid>
         <Row>
           <Col size="md-6">
             <form>
               <Input
-                value={this.state.title}
+                value={this.state.name}
                 onChange={this.handleInputChange}
-                name="title"
-                placeholder="Title (required)"
-              />
-              <Input
-                value={this.state.authors}
-                onChange={this.handleInputChange}
-                name="authors"
-                placeholder="Author(s) (required)"
-              />
-              <TextArea
-                value={this.state.description}
-                onChange={this.handleInputChange}
-                name="description"
-                placeholder="Description (Optional)"
+                name="name"
+                placeholder="Name (Required)"
               />
               <FormBtn
-                disabled={!(this.state.authors && this.state.title)}
                 onClick={this.handleFormSubmit}
               >
                 Find Book
@@ -86,22 +71,7 @@ class Books extends Component {
             </form>
           </Col>
           <Col size="md-6 sm-12">
-            {this.state.books.length ? (
-              <List>
-                {this.state.books.map(book => (
-                  <ListItem key={book._id}>
-                    <Link to={"/books/" + book._id}>
-                      <strong>
-                        {book.title} by {book.authors}
-                      </strong>
-                    </Link>
-                    <DeleteBtn onClick={() => this.deleteBook(book._id)} />
-                  </ListItem>
-                ))}
-              </List>
-            ) : (
-              <h3>No Results to Display</h3>
-            )}
+            {this.state.name}
           </Col>
         </Row>
       </Container>
