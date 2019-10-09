@@ -4,7 +4,7 @@ import API from "../utils/API";
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
-import { Input, TextArea, FormBtn } from "../components/Form";
+import { Input, Select, FormBtn } from "../components/Form";
 
 class Books extends Component {
   state = {
@@ -63,10 +63,16 @@ render() {
                 name="name"
                 placeholder="Name (Required)"
               />
+              <Select
+              />
+              <Select
+              />
+              <Select
+              />
               <FormBtn
                 onClick={this.handleFormSubmit}
               >
-                Find Book
+                Find Pet
               </FormBtn>
             </form>
           </Col>

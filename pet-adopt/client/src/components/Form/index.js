@@ -10,6 +10,14 @@ export function Input(props) {
   );
 }
 
+export function Select(props) {
+    return (
+      <div className="form-group">
+        <select className="form-control" {...props} />
+      </div>
+    );
+  }
+
 export function FormBtn(props) {
   return (
     <button {...props} style={{ float: "right", marginBottom: 10 }} className="btn">
