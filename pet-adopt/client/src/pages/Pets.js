@@ -11,12 +11,14 @@ class Pets extends Component {
     pets: [],
     userInfo: [],
     name: "",
+    city: "",
+    address:"",
+    state:"",
+    zip:"",
     choiceOne: "",
     choiceTwo: "",
     choiceThree: ""
   };
-
-  //Create JS here. Reference the responses from the user here ex. {this.state.choiceOne} via concat method, push to userInfo array.
 
   componentDidMount() {
     this.loadPets();
@@ -75,6 +77,25 @@ class Pets extends Component {
                 name="name"
                 placeholder="Name (Required)"
               />
+              <Input
+                value={this.state.address}
+                onChange={this.handleInputChange}
+                name="address"
+                placeholder="Street Address"
+              />
+              <Input
+                value={this.state.state}
+                onChange={this.handleInputChange}
+                name="state"
+                placeholder="State"
+              />
+              <Input
+                value={this.state.zip}
+                onChange={this.handleInputChange}
+                name="zip"
+                placeholder="Zip"
+              />
+
               <Select value={this.state.choiceOne}
               onChange={this.handleInputChange}
               name="choiceOne"
