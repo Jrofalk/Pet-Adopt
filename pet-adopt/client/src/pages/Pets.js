@@ -22,6 +22,13 @@ class Pets extends Component {
     this.loadPets();
   }
 
+  pushToUserInfo = () => {
+    this.setState({userInfo: this.state.userInfo.concat(this.state.choiceOne + this.state.choiceTwo + this.state.choiceThree)})
+    console.log(this.state.userInfo);
+  }
+
+
+
   loadPets = () => {
     API.getPets()
       .then(res =>
@@ -81,7 +88,8 @@ class Pets extends Component {
               name="choiceThree"
               />
               <FormBtn
-                onClick={this.handleFormSubmit}
+                // onClick={this.handleFormSubmit}
+                onClick={this.pushToUserInfo}
               >
                 Find Pet
               </FormBtn>
@@ -92,6 +100,8 @@ class Pets extends Component {
             {this.state.choiceOne}
             {this.state.choiceTwo}
             {this.state.choiceThree}
+            {this.state.userInfo}
+            
           </Col>
         </Row>
       </Container>
