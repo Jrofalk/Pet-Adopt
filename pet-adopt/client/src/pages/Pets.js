@@ -9,11 +9,14 @@ import { Input, Select, FormBtn } from "../components/Form";
 class Pets extends Component {
   state = {
     pets: [],
+    userInfo: [],
     name: "",
-    userInfo: []
-
+    choiceOne: "",
+    choiceTwo: "",
+    choiceThree: ""
   };
 
+  //Create JS here. Reference the responses from the user here ex. {this.state.choiceOne} via concat method, push to userInfo array.
 
   componentDidMount() {
     this.loadPets();
@@ -65,14 +68,17 @@ class Pets extends Component {
                 name="name"
                 placeholder="Name (Required)"
               />
-              <Select value={this.state.userInfo}
+              <Select value={this.state.choiceOne}
               onChange={this.handleInputChange}
-              name="userInfo"
-              placeholder=""
+              name="choiceOne"
               />
-              <Select
+              <Select value={this.state.choiceTwo}
+              onChange={this.handleInputChange}
+              name="choiceTwo"
               />
-              <Select
+              <Select value={this.state.choiceThree}
+              onChange={this.handleInputChange}
+              name="choiceThree"
               />
               <FormBtn
                 onClick={this.handleFormSubmit}
@@ -83,7 +89,9 @@ class Pets extends Component {
           </Col>
           <Col size="md-6 sm-12">
             {this.state.name}
-            {this.state.userInfo}
+            {this.state.choiceOne}
+            {this.state.choiceTwo}
+            {this.state.choiceThree}
           </Col>
         </Row>
       </Container>

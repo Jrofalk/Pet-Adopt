@@ -14,6 +14,7 @@ export function Select(props) {
     return (
         <div className="form-group">
             <select className="form-control" {...props}>
+                <option></option>
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
