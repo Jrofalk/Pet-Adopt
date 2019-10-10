@@ -128,7 +128,6 @@ class Pets extends Component {
             {this.state.choiceTwo}
             {this.state.choiceThree}
             {this.state.userInfo}
-            
           </Col>
         </Row>
       </Container>
