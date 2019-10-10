@@ -84,6 +84,12 @@ class Pets extends Component {
                 placeholder="Street Address"
               />
               <Input
+                value={this.state.city}
+                onChange={this.handleInputChange}
+                name="city"
+                placeholder="City"
+              />
+              <Input
                 value={this.state.state}
                 onChange={this.handleInputChange}
                 name="state"
