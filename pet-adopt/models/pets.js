@@ -2,11 +2,10 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const petSchema = new Schema({
-  title: { type: String, required: true },
-  authors: { type: String, required: true },
-  description: String,
-  image: String,
-  link: String,
+  name: { type: String, required: true },
+  choiceOne: { type: Number, required: true },
+  choiceTwo: Number,
+  choiceThree: String,
   date: { type: Date, default: Date.now }
 });
 

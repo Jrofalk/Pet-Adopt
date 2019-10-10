@@ -25,7 +25,7 @@ class Pets extends Component {
   loadPets = () => {
     API.getPets()
       .then(res =>
-        this.setState({ pets: res.data, title: "", authors: "", synopsis: "" })
+        this.setState({ pets: res.data, name: "", choiceOne: "", choiceTwo: "", choiceThree:"" })
       )
       .catch(err => console.log(err));
   };
