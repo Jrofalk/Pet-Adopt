@@ -1,5 +1,6 @@
-const express = require("express");
+// CLIENTS FOLDER PACKAGE.JSON MUST HAVE --PROXY: SET TO LOCALHOST-- -- WILL HAVE TO MANUALLY ALTER THIS FOR FUTURE PROJECTS
 
+const express = require("express");
 const mongoose = require("mongoose");
 const routes = require("./routes");
 const app = express();

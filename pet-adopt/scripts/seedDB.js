@@ -3,6 +3,8 @@ const db = require("../models");
 
 // This file empties the Pets collection and inserts the pets below
 
+//Must run this file in order to actually seed the database. Go to scripts folder and in the terminal run node seedDB.js or whatever the name of the seed file is.
+
 mongoose.connect(
   process.env.MONGODB_URI ||
   "mongodb://localhost/adoptablepets"

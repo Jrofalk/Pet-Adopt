@@ -25,15 +25,19 @@ class Pets extends Component {
   //   this.loadPets();
   // }
 
-  pushToUserInfo = () => {
+pushToUserInfo = () => {
     this.setState({userInfo: this.state.userInfo.concat(this.state.choiceOne + this.state.choiceTwo + this.state.choiceThree)})
     console.log(this.state.userInfo);
-  }
+}
 
+clickFindPets = (event) =>{
+  event.preventDefault();
+  this.loadPets();
+  this.pushToUserInfo();
+}
 
-
-  loadPets = (event) => {
-    event.preventDefault();
+  loadPets = () => {
+    // event.preventDefault();
     API.getPets()
       .then(res =>
         console.log(res)
@@ -120,7 +124,7 @@ class Pets extends Component {
               <FormBtn
                 // onClick={this.handleFormSubmit}
                 // onClick={this.pushToUserInfo}
-                onClick={this.loadPets}
+                onClick={this.clickFindPets}
                 
               >
                 Find Pet
