@@ -5,7 +5,7 @@ const petSchema = new Schema({
   name: { type: String, required: true },
   choiceOne: { type: Number, required: true },
   choiceTwo: Number,
-  choiceThree: String,
+  choiceThree: Number,
   date: { type: Date, default: Date.now }
 });
 

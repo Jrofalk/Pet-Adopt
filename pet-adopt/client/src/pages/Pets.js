@@ -6,6 +6,7 @@ import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
 import { Input, Select, FormBtn } from "../components/Form";
 
+
 class Pets extends Component {
   state = {
     pets: [],
@@ -20,9 +21,9 @@ class Pets extends Component {
     choiceThree: ""
   };
 
-  componentDidMount() {
-    this.loadPets();
-  }
+  // componentDidMount() {
+  //   this.loadPets();
+  // }
 
   pushToUserInfo = () => {
     this.setState({userInfo: this.state.userInfo.concat(this.state.choiceOne + this.state.choiceTwo + this.state.choiceThree)})
@@ -31,19 +32,21 @@ class Pets extends Component {
 
 
 
-  loadPets = () => {
+  loadPets = (event) => {
+    event.preventDefault();
     API.getPets()
       .then(res =>
-        this.setState({ pets: res.data, name: "", choiceOne: "", choiceTwo: "", choiceThree:"" })
+        console.log(res)
+        // this.setState({ pets: res.data, name: "", choiceOne: "", choiceTwo: "", choiceThree:"" })
       )
       .catch(err => console.log(err));
   };
 
-  deletePet = id => {
-    API.deletePet(id)
-      .then(res => this.loadPets())
-      .catch(err => console.log(err));
-  };
+  // deletePet = id => {
+  //   API.deletePet(id)
+  //     .then(res => this.loadPets())
+  //     .catch(err => console.log(err));
+  // };
 
   handleInputChange = event => {
     const { name, value } = event.target;
@@ -116,7 +119,9 @@ class Pets extends Component {
               />
               <FormBtn
                 // onClick={this.handleFormSubmit}
-                onClick={this.pushToUserInfo}
+                // onClick={this.pushToUserInfo}
+                onClick={this.loadPets}
+                
               >
                 Find Pet
               </FormBtn>

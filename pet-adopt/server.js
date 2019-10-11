@@ -20,3 +20,5 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/adoptablepets")
 app.listen(PORT, function() {
   console.log(`${PORT}`);
 });
+
+// CLIENTS FOLDER PACKAGE.JSON MUST HAVE --PROXY: SET TO LOCALHOST-- -- WILL HAVE TO MANUALLY ALTER THIS FOR FUTURE PROJECTS
