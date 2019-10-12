@@ -18,7 +18,8 @@ class Pets extends Component {
     zip: "",
     choiceOne: "",
     choiceTwo: "",
-    choiceThree: ""
+    choiceThree: "",
+    match: ""
   };
 
   // componentDidMount() {
@@ -56,6 +57,7 @@ class Pets extends Component {
         }
       }
        console.log(res.data[match]);
+       this.setState({ match: res.data[match].name })
       })
       .catch(err => console.log(err));
 
@@ -156,7 +158,9 @@ class Pets extends Component {
             {this.state.choiceOne}
             {this.state.choiceTwo}
             {this.state.choiceThree}
-            {this.state.userInfo} */}
+            {this.state.userInfo} */
+            this.state.match}
+            
           </Col>
         </Row>
       </Container>
