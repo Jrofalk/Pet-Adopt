@@ -30,18 +30,33 @@ class Pets extends Component {
     console.log(this.state.userInfo);
   }
 
+  //REFORMAT DATABASE INFO FOR EACH PET SO THAT PET INFO IS STORED WITHIN AN ARRAY CALLED PETINFO AS BELOW IN THE LOOP
+
   loadPets = () => {
     // event.preventDefault();
     API.getPets()
-      .then(res =>{
-       console.log(res)
-       let match = 0;
-       let minimumDifference = 50;
-       console.log(res.data.length)
-        // this.setState({ pets: res.data, name: "", choiceOne: "", choiceTwo: "", choiceThree:"" })
+      .then(res => {
+        console.log(res)
+        let match = 0;
+        let minimumDifference = 50;
+        //  console.log(res.data.length)
+        for (let i = 0; i < res.data.length; i++) {
+          let totalDifference = 0;
+          for (let x = 0; x < res.data[i].petInfo.length; x++) {
+            //Need to check that this.state.userInfo[x] is right?
+            var difference = Math.abs(this.state.userInfo[x] - res.data[i].petInfo[x])
+            totalDifference += difference;
+          }
+
+          if (totalDifference < minimumDifference) {
+            match = i;
+            minimumDifference = totalDifference;
+        }
+      }
+      console.log(res.data[match]);
       })
       .catch(err => console.log(err));
-      
+
   };
 
   clickFindPets = (event) => {
