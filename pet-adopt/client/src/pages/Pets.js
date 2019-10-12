@@ -31,7 +31,7 @@ class Pets extends Component {
     choices.push(this.state.choiceOne);
     choices.push(this.state.choiceTwo);
     choices.push(this.state.choiceThree);
-    this.setState({ userInfo: choices  })
+    this.setState({ userInfo: choices })
     // console.log(this.state.userInfo);
   }
 
@@ -54,10 +54,10 @@ class Pets extends Component {
           if (totalDifference < minimumDifference) {
             match = i;
             minimumDifference = totalDifference;
+          }
         }
-      }
-       console.log(res.data[match]);
-       this.setState({ match: res.data[match].name })
+        console.log(res.data[match]);
+        this.setState({ match: res.data[match].name })
       })
       .catch(err => console.log(err));
 
@@ -159,8 +159,8 @@ class Pets extends Component {
             {this.state.choiceTwo}
             {this.state.choiceThree}
             {this.state.userInfo} */
-            this.state.match}
-            
+              this.state.match}
+
           </Col>
         </Row>
       </Container>
