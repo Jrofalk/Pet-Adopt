@@ -13,9 +13,9 @@ class Pets extends Component {
     userInfo: [],
     name: "",
     city: "",
-    address:"",
-    state:"",
-    zip:"",
+    address: "",
+    state: "",
+    zip: "",
     choiceOne: "",
     choiceTwo: "",
     choiceThree: ""
@@ -25,26 +25,30 @@ class Pets extends Component {
   //   this.loadPets();
   // }
 
-pushToUserInfo = () => {
-    this.setState({userInfo: this.state.userInfo.concat(this.state.choiceOne + this.state.choiceTwo + this.state.choiceThree)})
+  pushToUserInfo = () => {
+    this.setState({ userInfo: this.state.userInfo.concat(this.state.choiceOne + "," + this.state.choiceTwo + "," + this.state.choiceThree + ",") })
     console.log(this.state.userInfo);
-}
-
-clickFindPets = (event) =>{
-  event.preventDefault();
-  this.loadPets();
-  this.pushToUserInfo();
-}
+  }
 
   loadPets = () => {
     // event.preventDefault();
     API.getPets()
-      .then(res =>
-        console.log(res)
+      .then(res =>{
+       console.log(res)
+       let match = 0;
+       let minimumDifference = 50;
+       console.log(res.data.length)
         // this.setState({ pets: res.data, name: "", choiceOne: "", choiceTwo: "", choiceThree:"" })
-      )
+      })
       .catch(err => console.log(err));
+      
   };
+
+  clickFindPets = (event) => {
+    event.preventDefault();
+    this.loadPets();
+    this.pushToUserInfo();
+  }
 
   // deletePet = id => {
   //   API.deletePet(id)
@@ -110,22 +114,22 @@ clickFindPets = (event) =>{
               />
 
               <Select value={this.state.choiceOne}
-              onChange={this.handleInputChange}
-              name="choiceOne"
+                onChange={this.handleInputChange}
+                name="choiceOne"
               />
               <Select value={this.state.choiceTwo}
-              onChange={this.handleInputChange}
-              name="choiceTwo"
+                onChange={this.handleInputChange}
+                name="choiceTwo"
               />
               <Select value={this.state.choiceThree}
-              onChange={this.handleInputChange}
-              name="choiceThree"
+                onChange={this.handleInputChange}
+                name="choiceThree"
               />
               <FormBtn
                 // onClick={this.handleFormSubmit}
                 // onClick={this.pushToUserInfo}
                 onClick={this.clickFindPets}
-                
+
               >
                 Find Pet
               </FormBtn>
