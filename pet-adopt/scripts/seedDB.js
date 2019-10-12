@@ -13,23 +13,29 @@ mongoose.connect(
 const petSeed = [
   {
     name: "Henry",
-    choiceOne: 1,
-    choiceTwo: 2,
-    choiceThree: 3,
+    petInfo: [
+      1,
+      2,
+      3
+    ],
     date: new Date(Date.now())
   },
   {
     name: "Mittens",
-    choiceOne: 2,
-    choiceTwo: 2,
-    choiceThree: 2,
+    petInfo: [
+      2,
+      2,
+      2
+    ],
     date: new Date(Date.now())
   },
   {
     name: "George",
-    choiceOne: 3,
-    choiceTwo: 3,
-    choiceThree: 3,
+    petInfo: [
+      3,
+      3,
+      3
+    ],
     date: new Date(Date.now())
   }
 ];
