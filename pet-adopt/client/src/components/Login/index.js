@@ -1,5 +1,6 @@
 import React from "react";
 import { MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn } from 'mdbreact';
+import "./style.css";
 
 export const FormPage = () => {
     return (
