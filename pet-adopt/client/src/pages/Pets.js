@@ -50,7 +50,6 @@ class Pets extends Component {
             var difference = Math.abs(parseInt(this.state.userInfo[x]) - res.data[i].petInfo[x])
             totalDifference += difference;
           }
-
           if (totalDifference < minimumDifference) {
             match = i;
             minimumDifference = totalDifference;
@@ -160,7 +159,6 @@ class Pets extends Component {
             {this.state.choiceThree}
             {this.state.userInfo} */
               this.state.match}
-
           </Col>
         </Row>
       </Container>
