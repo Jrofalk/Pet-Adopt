@@ -2,14 +2,14 @@ import React from "react";
 import { MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn } from 'mdbreact';
 import "./style.css";
 
-export const FormPage = () => {
+export const FormPage = (props) => {
     return (
         <MDBContainer>
             <MDBRow>
                 <MDBCol md="4">
                     <form>
                         <p className="h5 text-center mb-4">Sign in</p>
-                        <div className="black-text">
+                        <div className="black-text" >
                             <MDBInput
                                 label="Your name"
                                 icon="user"
