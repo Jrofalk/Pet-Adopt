@@ -19,20 +19,18 @@ class Admin extends Component {
   };
 
 
-  
+
 
 
   handleFormSubmit = event => {
-     event.preventDefault();
-     let userData = {
-       email: this.state.email,
-       password: this.state.password
-     }
+    event.preventDefault();
+    let userData = {
+      email: this.state.email,
+      password: this.state.password
+    }
     API.saveUser(userData
-      // email: this.state.email,
-      // password: this.state.password
     )
-    .then(console.log("cat"));
+      .then(console.log("User saved"));
 
   }
 
@@ -84,7 +82,7 @@ class Admin extends Component {
               // this.state.userName}
               // {this.state.password}
               this.state.userData
-    }
+            }
           </Col>
         </Row>
       </Container>
