@@ -3,7 +3,6 @@
 import { Col, Row, Container } from "../components/Grid";
 // import React from "react";
 import Jumbotron from "../components/Jumbotron";
-import { FormPage } from "../components/Login";
 import { Input, Select, FormBtn } from "../components/Form";
 import API from "../utils/API";
 import { MDBInput } from "mdbreact";

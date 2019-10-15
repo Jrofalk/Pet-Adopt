@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
 import { Input, Select, FormBtn } from "../components/Form";
-import { MDBContainer, MDBBtn, MDBModal, MDBModalBody, MDBModalHeader, MDBModalFooter } from 'mdbreact';
+import { MDBContainer, MDBBtn, MDBModal, MDBModalBody, MDBModalHeader, MDBModalFooter, MDBInput } from 'mdbreact';
 
 
 
@@ -22,7 +22,8 @@ class Pets extends Component {
     choiceTwo: "",
     choiceThree: "",
     match: "",
-    modal: false
+    modal: false,
+    text: ""
 
   };
 
@@ -178,8 +179,13 @@ class Pets extends Component {
           <MDBModal isOpen={this.state.modal} toggle={this.toggle}>
             <MDBModalHeader toggle={this.toggle}>MDBModal title</MDBModalHeader>
             <MDBModalBody>
-              (...)
-        </MDBModalBody>
+              <MDBInput
+                onChange={this.handleInputChange}
+                value={this.state.text}
+                name="text">
+                  {this.state.text}
+              </MDBInput>
+            </MDBModalBody>
             <MDBModalFooter>
               <MDBBtn color="secondary" onClick={this.toggle}>Close</MDBBtn>
               <MDBBtn color="primary">Save changes</MDBBtn>
