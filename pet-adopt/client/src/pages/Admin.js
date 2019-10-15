@@ -5,18 +5,32 @@ import { Col, Row, Container } from "../components/Grid";
 import Jumbotron from "../components/Jumbotron";
 import { Input, Select, FormBtn } from "../components/Form";
 import API from "../utils/API";
-import { MDBInput } from "mdbreact";
+// import { MDBInput } from "mdbreact";
 import React, { Component } from "react";
 import { EventEmitter } from "events";
+import { MDBContainer, MDBBtn, MDBModal, MDBModalBody, MDBModalHeader, MDBModalFooter, MDBInput } from 'mdbreact';
 
 
 class Admin extends Component {
   state = {
     email: "",
-    password: ""
+    password: "",
+    modal: false,
 
   };
 
+  toggle = () => {
+    this.setState({
+      modal: !this.state.modal
+    });
+  }
+
+  componentDidMount() {
+    // this.loadPets();
+    this.setState({
+      modal: !this.state.modal
+    });
+  }
 
   handleFormSubmit = event => {
     event.preventDefault();
@@ -30,8 +44,6 @@ class Admin extends Component {
 
   }
 
-
-
   handleInputChange = event => {
     const { name, value } = event.target;
     this.setState({
@@ -39,13 +51,12 @@ class Admin extends Component {
     });
   }
 
-
   render() {
     return (
       <Container fluid>
-        <Row>
-          <Col size="md-6">
-            <form>
+        {/* <Row> */}
+          {/* <Col size="md-6"> */}
+            {/* <form>
               <Input
                 value={this.state.email}
                 onChange={this.handleInputChange}
@@ -67,9 +78,9 @@ class Admin extends Component {
               >
                 Submit
               </FormBtn>
-            </form>
-          </Col>
-          <Col size="md-6 sm-12">
+            </form> */}
+          {/* </Col> */}
+          {/* <Col size="md-6 sm-12"> */}
             {/* {this.state.name}
             {this.state.choiceOne}
             {this.state.choiceTwo}
@@ -79,8 +90,34 @@ class Admin extends Component {
               // {this.state.password}
               this.state.userData
             }
-          </Col>
-        </Row>
+          {/* </Col> */}
+        {/* </Row> */}
+        <MDBContainer>
+          {/* <MDBBtn onClick={this.toggle}>Modal</MDBBtn> */}
+          <MDBModal isOpen={this.state.modal} toggle={this.toggle}>
+            <MDBModalHeader toggle={this.toggle}>Admin</MDBModalHeader>
+            <MDBModalBody>
+              <MDBInput
+                onChange={this.handleInputChange}
+                value={this.state.email}
+                name="email"
+                label="Email">
+                {/* {this.state.name} */}
+              </MDBInput>
+              <MDBInput
+                onChange={this.handleInputChange}
+                value={this.state.password}
+                name="password"
+                label="Password">
+                {/* {this.state.email} */}
+              </MDBInput>
+            </MDBModalBody>
+            <MDBModalFooter>
+              <MDBBtn color="secondary" onClick={this.toggle}>Close</MDBBtn>
+              <MDBBtn color="primary" onClick={this.handleFormSubmit}>Submit</MDBBtn>
+            </MDBModalFooter>
+          </MDBModal>
+        </MDBContainer>
       </Container>
     );
   }

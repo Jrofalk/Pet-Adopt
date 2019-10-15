@@ -48,7 +48,6 @@ class Pets extends Component {
 
   }
 
-
   componentDidMount() {
     // this.loadPets();
     this.setState({
@@ -110,19 +109,6 @@ class Pets extends Component {
       [name]: value
     });
   };
-
-  // handleFormSubmit = event => {
-  //   event.preventDefault();
-    // if (this.state.title && this.state.authors) {
-    //   API.savePet({
-    //     title: this.state.title,
-    //     author: this.state.authors,
-    //     synopsis: this.state.description
-    //   })
-    //     .then(res => this.loadPets())
-    //     .catch(err => console.log(err));
-    // }
-  // };
 
   render() {
     return (
