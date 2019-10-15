@@ -14,6 +14,7 @@ class Pets extends Component {
     pets: [],
     userInfo: [],
     name: "",
+    email: "",
     city: "",
     address: "",
     state: "",
@@ -116,12 +117,12 @@ class Pets extends Component {
         <Row>
           <Col size="md-6">
             <form>
-              <Input
+              {/* <Input
                 value={this.state.name}
                 onChange={this.handleInputChange}
                 name="name"
                 placeholder="Name (Required)"
-              />
+              /> */}
               <Input
                 value={this.state.address}
                 onChange={this.handleInputChange}
@@ -180,13 +181,21 @@ class Pets extends Component {
         <MDBContainer>
           {/* <MDBBtn onClick={this.toggle}>Modal</MDBBtn> */}
           <MDBModal isOpen={this.state.modal} toggle={this.toggle}>
-            <MDBModalHeader toggle={this.toggle}>MDBModal title</MDBModalHeader>
+            <MDBModalHeader toggle={this.toggle}>Welcome</MDBModalHeader>
             <MDBModalBody>
               <MDBInput
                 onChange={this.handleInputChange}
-                value={this.state.text}
-                name="text">
-                  {this.state.text}
+                value={this.state.name}
+                name="name"
+                label="Name">
+                  {/* {this.state.name} */}
+              </MDBInput>
+              <MDBInput
+                onChange={this.handleInputChange}
+                value={this.state.email}
+                name="email"
+                label="Email">
+                  {/* {this.state.email} */}
               </MDBInput>
             </MDBModalBody>
             <MDBModalFooter>
