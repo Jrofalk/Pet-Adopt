@@ -54,22 +54,28 @@ class Admin extends Component {
   render() {
     return (
       <Container fluid>
-        {/* <Row> */}
-          {/* <Col size="md-6"> */}
-            {/* <form>
+        <Row>
+          <Col size="md-6">
+             <form>
               <Input
-                value={this.state.email}
-                onChange={this.handleInputChange}
-                name="email"
-                placeholder="Email"
+                // value={this.state.email}
+                // onChange={this.handleInputChange}
+                name="name"
+                placeholder="Client Name"
               />
+              <FormBtn>
+                Search by Client Name
+              </FormBtn>
               <Input
-                value={this.state.password}
-                onChange={this.handleInputChange}
-                name="password"
-                placeholder="Password"
+                // value={this.state.password}
+                // onChange={this.handleInputChange}
+                name="petName"
+                placeholder="Pet Name"
               />
-              <FormBtn
+              <FormBtn>
+                Search by Pet Name
+              </FormBtn>
+              {/* <FormBtn
                 // onClick={this.handleFormSubmit}
                 // onClick={this.pushToUserData}
                 // onClick={this.clickFindPets}
@@ -77,10 +83,10 @@ class Admin extends Component {
                 onClick={this.handleFormSubmit}
               >
                 Submit
-              </FormBtn>
-            </form> */}
-          {/* </Col> */}
-          {/* <Col size="md-6 sm-12"> */}
+              </FormBtn> */}
+            </form> 
+          </Col>
+          <Col size="md-6 sm-12">
             {/* {this.state.name}
             {this.state.choiceOne}
             {this.state.choiceTwo}
@@ -88,10 +94,10 @@ class Admin extends Component {
             {this.state.userInfo} */
               // this.state.userName}
               // {this.state.password}
-              this.state.userData
+              // this.state.userData
             }
-          {/* </Col> */}
-        {/* </Row> */}
+          </Col>
+        </Row>
         <MDBContainer>
           {/* <MDBBtn onClick={this.toggle}>Modal</MDBBtn> */}
           <MDBModal isOpen={this.state.modal} toggle={this.toggle}>
