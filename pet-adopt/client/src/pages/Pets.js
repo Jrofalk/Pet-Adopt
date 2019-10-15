@@ -35,9 +35,12 @@ class Pets extends Component {
 
 
 
-  // componentDidMount() {
-  //   this.loadPets();
-  // }
+  componentDidMount() {
+    // this.loadPets();
+    this.setState({
+          modal: !this.state.modal
+        });
+  }
 
   pushToUserInfo = () => {
     let choices = this.state.userInfo;
@@ -175,7 +178,7 @@ class Pets extends Component {
           </Col>
         </Row>
         <MDBContainer>
-          <MDBBtn onClick={this.toggle}>Modal</MDBBtn>
+          {/* <MDBBtn onClick={this.toggle}>Modal</MDBBtn> */}
           <MDBModal isOpen={this.state.modal} toggle={this.toggle}>
             <MDBModalHeader toggle={this.toggle}>MDBModal title</MDBModalHeader>
             <MDBModalBody>

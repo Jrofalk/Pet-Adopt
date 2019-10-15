@@ -18,9 +18,6 @@ class Admin extends Component {
   };
 
 
-
-
-
   handleFormSubmit = event => {
     event.preventDefault();
     let userData = {
