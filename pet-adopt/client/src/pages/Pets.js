@@ -15,6 +15,7 @@ class Pets extends Component {
     userInfo: [],
     name: "",
     email: "",
+    password: "",
     city: "",
     address: "",
     state: "",
@@ -34,6 +35,18 @@ class Pets extends Component {
     });
   }
 
+  handleFormSubmit = event => {
+    event.preventDefault();
+    let userData = {
+      name: this.state.name,
+      email: this.state.email,
+      password: this.state.password
+    }
+    API.saveUser(userData
+    )
+      .then(console.log("User saved"));
+
+  }
 
 
   componentDidMount() {
@@ -98,8 +111,8 @@ class Pets extends Component {
     });
   };
 
-  handleFormSubmit = event => {
-    event.preventDefault();
+  // handleFormSubmit = event => {
+  //   event.preventDefault();
     // if (this.state.title && this.state.authors) {
     //   API.savePet({
     //     title: this.state.title,
@@ -109,7 +122,7 @@ class Pets extends Component {
     //     .then(res => this.loadPets())
     //     .catch(err => console.log(err));
     // }
-  };
+  // };
 
   render() {
     return (
@@ -200,7 +213,7 @@ class Pets extends Component {
             </MDBModalBody>
             <MDBModalFooter>
               <MDBBtn color="secondary" onClick={this.toggle}>Close</MDBBtn>
-              <MDBBtn color="primary">Save changes</MDBBtn>
+              <MDBBtn color="primary" onClick={this.handleFormSubmit}>Submit</MDBBtn>
             </MDBModalFooter>
           </MDBModal>
         </MDBContainer>
