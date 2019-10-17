@@ -7,8 +7,6 @@ import { List, ListItem } from "../components/List";
 import { Input, Select, FormBtn } from "../components/Form";
 import { MDBContainer, MDBBtn, MDBModal, MDBModalBody, MDBModalHeader, MDBModalFooter, MDBInput } from 'mdbreact';
 
-
-
 class Pets extends Component {
   state = {
     pets: [],
@@ -71,6 +69,8 @@ class Pets extends Component {
         // console.log(res)
         let match = 0;
         let minimumDifference = 50;
+        let eachDiff = [];
+        let pet = [];
         //  console.log(res.data.length)
         for (let i = 0; i < res.data.length; i++) {
           let totalDifference = 0;
@@ -79,12 +79,23 @@ class Pets extends Component {
             var difference = Math.abs(parseInt(this.state.userInfo[x]) - res.data[i].petInfo[x])
             totalDifference += difference;
           }
+          //console logging this displays the difference between the user and each pet
+          // res.data[i].name += " " + totalDifference;
+          eachDiff.push(totalDifference);
+          // pet.push(res.data[i].name);
+          //console.log(match);
+          //console.log(res.data[match]);
+          //Dont need this section. Push each total difference into an array in above for loop
           if (totalDifference < minimumDifference) {
             match = i;
             minimumDifference = totalDifference;
           }
         }
-        console.log(res.data[match]);
+      
+      eachDiff.sort(function(a,b){return a-b});
+      console.log(eachDiff)
+        // console.log(pet);
+        //console.log(res.data[match]);
         this.setState({ match: res.data[match].name })
       })
       .catch(err => console.log(err));

@@ -58,8 +58,6 @@ class Admin extends Component {
           <Col size="md-6">
              <form>
               <Input
-                // value={this.state.email}
-                // onChange={this.handleInputChange}
                 name="name"
                 placeholder="Client Name"
               />
@@ -67,8 +65,6 @@ class Admin extends Component {
                 Search by Client Name
               </FormBtn>
               <Input
-                // value={this.state.password}
-                // onChange={this.handleInputChange}
                 name="petName"
                 placeholder="Pet Name"
               />
