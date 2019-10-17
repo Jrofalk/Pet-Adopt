@@ -15,7 +15,7 @@ function App() {
           <Route exact path="/" component={Pets} />
           <Route exact path="/pets" component={Pets} />
           <Route exact path="/admin" component={Admin}/>
-          <Route exact path="/pets/:id" component={Detail} />
+          <Route exact path="/pets/:name" component={Admin} />
           <Route component={NoMatch} />
         </Switch>
       </div>

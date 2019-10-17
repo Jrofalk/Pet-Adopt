@@ -3,12 +3,12 @@ const petsController = require("../../controllers/petsController");
 
 router.route("/")
   .get(petsController.findAll)
-  .post(petsController.create);
+  .post(petsController.create)
 
 router
-  .route("/:id")
-  .get(petsController.findById)
+  .route("/:name")
+  .get(petsController.findOne)
   .put(petsController.update)
-  .delete(petsController.remove);
+  .delete(petsController.remove)
 
 module.exports = router;

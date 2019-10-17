@@ -47,9 +47,10 @@ class Admin extends Component {
 
   handleFindPet = event => {
     event.preventDefault();
-    API.getOnePet(this.state.petName)
+    let name = this.state.petName
+    API.getOnePet(name)
     .then(res => {
-      console.log(res.data)
+      console.log(res.data);
       //Loop through this data to find the name that matches the query. Look at example from book search
     })
   }
