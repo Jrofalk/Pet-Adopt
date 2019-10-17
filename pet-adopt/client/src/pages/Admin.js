@@ -16,6 +16,7 @@ class Admin extends Component {
     email: "",
     password: "",
     modal: false,
+    petName: ""
 
   };
 
@@ -44,6 +45,15 @@ class Admin extends Component {
 
   }
 
+  handleFindPet = event => {
+    event.preventDefault();
+    API.getOnePet(this.state.petName)
+    .then(res => {
+      console.log(res.data)
+      //Loop through this data to find the name that matches the query. Look at example from book search
+    })
+  }
+
   handleInputChange = event => {
     const { name, value } = event.target;
     this.setState({
@@ -56,7 +66,7 @@ class Admin extends Component {
       <Container fluid>
         <Row>
           <Col size="md-6">
-             <form>
+            <form>
               <Input
                 name="name"
                 placeholder="Client Name"
@@ -65,10 +75,13 @@ class Admin extends Component {
                 Search by Client Name
               </FormBtn>
               <Input
+                value={this.state.petName}
+                onChange={this.handleInputChange}
                 name="petName"
                 placeholder="Pet Name"
               />
-              <FormBtn>
+              <FormBtn
+              onClick={this.handleFindPet}>
                 Search by Pet Name
               </FormBtn>
               {/* <FormBtn
@@ -80,7 +93,7 @@ class Admin extends Component {
               >
                 Submit
               </FormBtn> */}
-            </form> 
+            </form>
           </Col>
           <Col size="md-6 sm-12">
             {/* {this.state.name}

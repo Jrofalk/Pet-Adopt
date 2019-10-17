@@ -9,6 +9,9 @@ export default {
   getPet: function(id) {
     return axios.get("/api/pets/" + id);
   },
+  getOnePet: function (query) {
+    return axios.get("/api/pets", query);
+  },
   // Deletes the pet with the given id
   deletePet: function(id) {
     return axios.delete("/api/pets/" + id);
