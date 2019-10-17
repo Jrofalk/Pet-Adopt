@@ -81,18 +81,18 @@ class Pets extends Component {
           }
           //console logging this displays the difference between the user and each pet
           // res.data[i].name += " " + totalDifference;
-          eachDiff.push(totalDifference);
+          eachDiff.push({totalDifference: totalDifference, name: res.data[i].name});
           // pet.push(res.data[i].name);
           //console.log(match);
-          //console.log(res.data[match]);
+          //console.log(res.data[match]);s
           //Dont need this section. Push each total difference into an array in above for loop
-          if (totalDifference < minimumDifference) {
-            match = i;
-            minimumDifference = totalDifference;
-          }
+          // if (totalDifference < minimumDifference) {
+          //   match = i;
+          //   minimumDifference = totalDifference;
+          // }
         }
       
-      eachDiff.sort(function(a,b){return a-b});
+      eachDiff.sort(function(a,b){return a.totalDifference-b.totalDifference});
       console.log(eachDiff)
         // console.log(pet);
         //console.log(res.data[match]);
