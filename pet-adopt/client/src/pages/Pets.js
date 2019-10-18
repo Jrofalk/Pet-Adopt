@@ -12,6 +12,7 @@ class Pets extends Component {
     pets: [],
     userInfo: [],
     name: "",
+    telephone: "",
     email: "",
     password: "",
     city: "",
@@ -22,23 +23,29 @@ class Pets extends Component {
     choiceTwo: "",
     choiceThree: "",
     match: "",
-    modal: false,
+    // modal: false,
     text: ""
 
   };
 
-  toggle = () => {
-    this.setState({
-      modal: !this.state.modal
-    });
-  }
+  // toggle = () => {
+  //   this.setState({
+  //     modal: !this.state.modal
+  //   });
+  // }
 
-  handleFormSubmit = event => {
-    event.preventDefault();
+  handleFormSubmit = () => {
+    // event.preventDefault();
     let userData = {
       name: this.state.name,
       email: this.state.email,
-      password: this.state.password
+      password: this.state.password,
+      city: this.state.city,
+      address: this.state.address,
+      zip: this.state.zip,
+      state: this.state.state,
+      userInfo: this.state.userInfo,
+      telephone: this.state.telephone
     }
     API.saveUser(userData
     )
@@ -46,12 +53,12 @@ class Pets extends Component {
 
   }
 
-  componentDidMount() {
-    // this.loadPets();
-    this.setState({
-      modal: !this.state.modal
-    });
-  }
+  // componentDidMount() {
+  //   // this.loadPets();
+  //   this.setState({
+  //     modal: !this.state.modal
+  //   });
+  // }
 
   pushToUserInfo = () => {
     let choices = this.state.userInfo;
@@ -102,6 +109,7 @@ class Pets extends Component {
     event.preventDefault();
     this.loadPets();
     this.pushToUserInfo();
+    this.handleFormSubmit();
   }
 
   // deletePet = id => {
@@ -122,13 +130,26 @@ class Pets extends Component {
       <Container fluid>
         <Row>
           <Col size="md-6">
+            
             <form>
-              {/* <Input
+              <Input
                 value={this.state.name}
                 onChange={this.handleInputChange}
                 name="name"
                 placeholder="Name (Required)"
-              /> */}
+              />
+              <Input
+                value={this.state.email}
+                onChange={this.handleInputChange}
+                name="email"
+                placeholder="Email"
+              />
+              <Input
+                value={this.state.telephone}
+                onChange={this.handleInputChange}
+                name="telephone"
+                placeholder="Telephone"
+              />
               <Input
                 value={this.state.address}
                 onChange={this.handleInputChange}
@@ -184,32 +205,39 @@ class Pets extends Component {
               this.state.match}
           </Col>
         </Row>
-        <MDBContainer>
+        {/* <MDBContainer> */}
           {/* <MDBBtn onClick={this.toggle}>Modal</MDBBtn> */}
-          <MDBModal isOpen={this.state.modal} toggle={this.toggle}>
+          {/* <MDBModal isOpen={this.state.modal} toggle={this.toggle}>
             <MDBModalHeader toggle={this.toggle}>Welcome</MDBModalHeader>
-            <MDBModalBody>
-              <MDBInput
+            <MDBModalBody> */}
+              {/* <MDBInput
                 onChange={this.handleInputChange}
                 value={this.state.name}
                 name="name"
-                label="Name">
+                label="Name"> */}
                 {/* {this.state.name} */}
-              </MDBInput>
+              {/* </MDBInput>
               <MDBInput
                 onChange={this.handleInputChange}
                 value={this.state.email}
                 name="email"
-                label="Email">
+                label="Email"> */}
                 {/* {this.state.email} */}
-              </MDBInput>
+              {/* </MDBInput>
+              <MDBInput
+                onChange={this.handleInputChange}
+                value={this.state.email}
+                name="email"
+                label="Email"> */}
+                {/* {this.state.email} */}
+              {/* </MDBInput>
             </MDBModalBody>
             <MDBModalFooter>
               <MDBBtn color="secondary" onClick={this.toggle}>Close</MDBBtn>
-              <MDBBtn color="primary" onClick={this.handleFormSubmit}>Submit</MDBBtn>
+              <MDBBtn color="primary" onClick={this.toggle}>Submit</MDBBtn>
             </MDBModalFooter>
           </MDBModal>
-        </MDBContainer>
+        </MDBContainer> */}
       </Container>
     );
   }
@@ -218,4 +246,5 @@ class Pets extends Component {
 export default Pets;
 
 
-////SAVE ALL USER DATA INCLUDING RESPONSES TO USER DATABASE
+////SAVE ALL USER DATA INCLUDING RESPONSES FOR MATCH TO USER DATABASE
+///CREATE HOMEPAGE WITH JUMBOTRON

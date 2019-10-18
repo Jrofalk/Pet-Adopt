@@ -45,6 +45,10 @@ class Admin extends Component {
 
   }
 
+  handleLogIn = event => {
+    event.preventDefault();
+  }
+
   handleFindPet = event => {
     event.preventDefault();
     let name = this.state.petName
@@ -130,6 +134,7 @@ class Admin extends Component {
             <MDBModalFooter>
               <MDBBtn color="secondary" onClick={this.toggle}>Close</MDBBtn>
               <MDBBtn color="primary" onClick={this.handleFormSubmit}>Submit</MDBBtn>
+              <MDBBtn color="primary" onClick={this.handleLogIn}>Log In</MDBBtn>
             </MDBModalFooter>
           </MDBModal>
         </MDBContainer>
