@@ -5,7 +5,7 @@ import "./style.css";
 function Nav() {
   return (
     <nav className="navbar navbar-expand-lg navbar-light">
-      <a className="navbar-brand" href="/home">
+      <a className="navbar-brand" href="/">
         Pet Search
       </a>
       <div id="navbarNav">
