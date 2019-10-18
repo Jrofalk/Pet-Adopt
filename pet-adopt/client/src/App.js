@@ -5,6 +5,8 @@ import Detail from "./pages/Detail";
 import Admin from "./pages/Admin";
 import NoMatch from "./pages/NoMatch";
 import Nav from "./components/Nav";
+import Face from "./pages/Home";
+import Home from "./pages/Home";
 
 function App() {
   return (
@@ -12,10 +14,11 @@ function App() {
       <div>
         <Nav />
         <Switch>
-          <Route exact path="/" component={Pets} />
+          <Route exact path="/" component={Home} />
           <Route exact path="/pets" component={Pets} />
           <Route exact path="/admin" component={Admin}/>
           <Route exact path="/pets/:name" component={Admin} />
+          <Route exact path="/home" component={Home}/>
           <Route component={NoMatch} />
         </Switch>
       </div>
