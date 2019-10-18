@@ -49,8 +49,8 @@ class Pets extends Component {
   componentDidMount() {
     // this.loadPets();
     this.setState({
-          modal: !this.state.modal
-        });
+      modal: !this.state.modal
+    });
   }
 
   pushToUserInfo = () => {
@@ -79,21 +79,17 @@ class Pets extends Component {
             var difference = Math.abs(parseInt(this.state.userInfo[x]) - res.data[i].petInfo[x])
             totalDifference += difference;
           }
-          //console logging this displays the difference between the user and each pet
-          // res.data[i].name += " " + totalDifference;
-          eachDiff.push({totalDifference: totalDifference, name: res.data[i].name});
-          // pet.push(res.data[i].name);
-          //console.log(match);
-          //console.log(res.data[match]);s
-          //Dont need this section. Push each total difference into an array in above for loop
+
+          eachDiff.push({ totalDifference: totalDifference, name: res.data[i].name });
+          //Code edited out below provides a single match
           // if (totalDifference < minimumDifference) {
           //   match = i;
           //   minimumDifference = totalDifference;
           // }
         }
-      
-      eachDiff.sort(function(a,b){return a.totalDifference-b.totalDifference});
-      console.log(eachDiff)
+
+        eachDiff.sort(function (a, b) { return a.totalDifference - b.totalDifference });
+        console.log(eachDiff)
         // console.log(pet);
         //console.log(res.data[match]);
         this.setState({ match: res.data[match].name })
@@ -198,14 +194,14 @@ class Pets extends Component {
                 value={this.state.name}
                 name="name"
                 label="Name">
-                  {/* {this.state.name} */}
+                {/* {this.state.name} */}
               </MDBInput>
               <MDBInput
                 onChange={this.handleInputChange}
                 value={this.state.email}
                 name="email"
                 label="Email">
-                  {/* {this.state.email} */}
+                {/* {this.state.email} */}
               </MDBInput>
             </MDBModalBody>
             <MDBModalFooter>
@@ -220,3 +216,6 @@ class Pets extends Component {
 }
 
 export default Pets;
+
+
+////SAVE ALL USER DATA INCLUDING RESPONSES TO USER DATABASE
