@@ -94,7 +94,6 @@ class Pets extends Component {
           //   minimumDifference = totalDifference;
           // }
         }
-
         eachDiff.sort(function (a, b) { return a.totalDifference - b.totalDifference });
         console.log(eachDiff)
         // console.log(pet);
@@ -129,8 +128,7 @@ class Pets extends Component {
     return (
       <Container fluid>
         <Row>
-          <Col size="md-6">
-            
+          <Col size="md-4">
             <form>
               <Input
                 value={this.state.name}
@@ -174,7 +172,10 @@ class Pets extends Component {
                 name="zip"
                 placeholder="Zip"
               />
-
+            </form>
+          </Col>
+          <Col size='md-4'>
+            <form>
               <Select value={this.state.choiceOne}
                 onChange={this.handleInputChange}
                 name="choiceOne"
@@ -196,41 +197,33 @@ class Pets extends Component {
               </FormBtn>
             </form>
           </Col>
-          <Col size="md-6 sm-12">
-            {/* {this.state.name}
-            {this.state.choiceOne}
-            {this.state.choiceTwo}
-            {this.state.choiceThree}
-            {this.state.userInfo} */
-              this.state.match}
-          </Col>
-        </Row>
+          </Row>
         {/* <MDBContainer> */}
-          {/* <MDBBtn onClick={this.toggle}>Modal</MDBBtn> */}
-          {/* <MDBModal isOpen={this.state.modal} toggle={this.toggle}>
+        {/* <MDBBtn onClick={this.toggle}>Modal</MDBBtn> */}
+        {/* <MDBModal isOpen={this.state.modal} toggle={this.toggle}>
             <MDBModalHeader toggle={this.toggle}>Welcome</MDBModalHeader>
             <MDBModalBody> */}
-              {/* <MDBInput
+        {/* <MDBInput
                 onChange={this.handleInputChange}
                 value={this.state.name}
                 name="name"
                 label="Name"> */}
-                {/* {this.state.name} */}
-              {/* </MDBInput>
+        {/* {this.state.name} */}
+        {/* </MDBInput>
               <MDBInput
                 onChange={this.handleInputChange}
                 value={this.state.email}
                 name="email"
                 label="Email"> */}
-                {/* {this.state.email} */}
-              {/* </MDBInput>
+        {/* {this.state.email} */}
+        {/* </MDBInput>
               <MDBInput
                 onChange={this.handleInputChange}
                 value={this.state.email}
                 name="email"
                 label="Email"> */}
-                {/* {this.state.email} */}
-              {/* </MDBInput>
+        {/* {this.state.email} */}
+        {/* </MDBInput>
             </MDBModalBody>
             <MDBModalFooter>
               <MDBBtn color="secondary" onClick={this.toggle}>Close</MDBBtn>
