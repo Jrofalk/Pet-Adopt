@@ -6,6 +6,7 @@ import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
 import { Input, Select, FormBtn } from "../components/Form";
 import { MDBContainer, MDBBtn, MDBModal, MDBModalBody, MDBModalHeader, MDBModalFooter, MDBInput } from 'mdbreact';
+import Card from "../components/Cards";
 
 class Pets extends Component {
   state = {
@@ -22,7 +23,7 @@ class Pets extends Component {
     choiceOne: "",
     choiceTwo: "",
     choiceThree: "",
-    match: "",
+    matches: [],
     // modal: false,
     text: ""
 
@@ -74,10 +75,11 @@ class Pets extends Component {
     API.getPets()
       .then(res => {
         // console.log(res)
-        let match = 0;
-        let minimumDifference = 50;
+
+        //Code commented out below involves finding a single match
+        // let match = 0;
+        // let minimumDifference = 50;
         let eachDiff = [];
-        let pet = [];
         //  console.log(res.data.length)
         for (let i = 0; i < res.data.length; i++) {
           let totalDifference = 0;
@@ -86,19 +88,29 @@ class Pets extends Component {
             var difference = Math.abs(parseInt(this.state.userInfo[x]) - res.data[i].petInfo[x])
             totalDifference += difference;
           }
-
           eachDiff.push({ totalDifference: totalDifference, name: res.data[i].name });
-          //Code edited out below provides a single match
+          //Code commented out below provides a single match
           // if (totalDifference < minimumDifference) {
           //   match = i;
           //   minimumDifference = totalDifference;
           // }
         }
         eachDiff.sort(function (a, b) { return a.totalDifference - b.totalDifference });
-        console.log(eachDiff)
-        // console.log(pet);
-        //console.log(res.data[match]);
-        this.setState({ match: res.data[match].name })
+        console.log(eachDiff);
+        let results = eachDiff
+        let matches = [];
+        results = results.map(result => {
+          //Store each item of pet information in a new object 
+          result = {
+            name: result.name
+          }
+          // console.log(result.name);
+          matches.push(result.name);
+        })
+        // console.log(matches);
+        this.setState({ matches: matches })
+        //Code commented out below displays single match
+        // this.setState({ match: res.data[match].name })
       })
       .catch(err => console.log(err));
 
@@ -197,7 +209,8 @@ class Pets extends Component {
               </FormBtn>
             </form>
           </Col>
-          </Row>
+        </Row>
+        {this.state.matches}
         {/* <MDBContainer> */}
         {/* <MDBBtn onClick={this.toggle}>Modal</MDBBtn> */}
         {/* <MDBModal isOpen={this.state.modal} toggle={this.toggle}>

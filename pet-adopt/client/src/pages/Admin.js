@@ -112,17 +112,6 @@ class Admin extends Component {
               </FormBtn> */}
             </form>
           </Col>
-          <Col size="md-6 sm-12">
-            {/* {this.state.name}
-            {this.state.choiceOne}
-            {this.state.choiceTwo}
-            {this.state.choiceThree}
-            {this.state.userInfo} */
-              // this.state.userName}
-              // {this.state.password}
-              // this.state.userData
-            }
-          </Col>
         </Row>
         <MDBContainer>
           {/* <MDBBtn onClick={this.toggle}>Modal</MDBBtn> */}
