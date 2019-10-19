@@ -16,7 +16,8 @@ class Admin extends Component {
     email: "",
     password: "",
     modal: false,
-    petName: ""
+    petName: "",
+    userName: ""
 
   };
 
@@ -53,9 +54,18 @@ class Admin extends Component {
     event.preventDefault();
     let name = this.state.petName
     API.getOnePet(name)
-    .then(res => {
-      console.log(res.data);
-    })
+      .then(res => {
+        console.log(res.data);
+      })
+  }
+
+  handleFindUser = event => {
+    event.preventDefault();
+    let name = this.state.userName
+    API.getOneUser(name)
+      .then(res => {
+        console.log(res.data);
+      })
   }
 
   handleInputChange = event => {
@@ -72,10 +82,13 @@ class Admin extends Component {
           <Col size="md-6">
             <form>
               <Input
-                name="name"
+                value={this.state.userName}
+                onChange={this.handleInputChange}
+                name="userName"
                 placeholder="Client Name"
               />
-              <FormBtn>
+              <FormBtn
+                onClick={this.handleFindUser}>
                 Search by Client Name
               </FormBtn>
               <Input
@@ -85,7 +98,7 @@ class Admin extends Component {
                 placeholder="Pet Name"
               />
               <FormBtn
-              onClick={this.handleFindPet}>
+                onClick={this.handleFindPet}>
                 Search by Pet Name
               </FormBtn>
               {/* <FormBtn

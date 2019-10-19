@@ -11,7 +11,6 @@ module.exports = {
   },
   findOne: function(req, res) {
     db.Pet
-      //.findByName(req.params.name)
       .findOne({name: req.params.name}, req.body)
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));

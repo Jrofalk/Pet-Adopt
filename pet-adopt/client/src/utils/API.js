@@ -22,5 +22,8 @@ export default {
   },
   saveUser: function(userData) {
     return axios.post("/api/users", userData);
+  },
+  getOneUser: function (name) {
+    return axios.get("/api/users/" + name);
   }
 };
