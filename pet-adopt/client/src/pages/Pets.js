@@ -9,6 +9,9 @@ import { MDBContainer, MDBBtn, MDBModal, MDBModalBody, MDBModalHeader, MDBModalF
 import Card from "../components/Cards";
 import Wrapper from "../components/Wrapper";
 
+
+
+
 class Pets extends Component {
   state = {
     pets: [],
