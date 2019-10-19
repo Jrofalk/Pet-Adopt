@@ -16,6 +16,8 @@ const UserSchema = new mongoose.Schema({
   
 });
 
+
+
 UserSchema.pre('save', function(next) {
     // Check if document is new or a new password has been set
     if (this.isNew || this.isModified('password')) {

@@ -9,6 +9,9 @@ import API from "../utils/API";
 import React, { Component } from "react";
 import { EventEmitter } from "events";
 import { MDBContainer, MDBBtn, MDBModal, MDBModalBody, MDBModalHeader, MDBModalFooter, MDBInput } from 'mdbreact';
+// import React from "react";
+// import ReactDOM from "react-dom";
+
 
 
 class Admin extends Component {
@@ -20,6 +23,7 @@ class Admin extends Component {
     userName: ""
 
   };
+
 
   toggle = () => {
     this.setState({

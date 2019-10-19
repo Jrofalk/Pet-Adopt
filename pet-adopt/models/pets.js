@@ -6,6 +6,7 @@ const petSchema = new Schema({
   choiceOne: { type: Number, required: true },
   choiceTwo: Number,
   choiceThree: Number,
+  image: String,
   date: { type: Date, default: Date.now }
 });
 

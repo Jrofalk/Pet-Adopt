@@ -91,7 +91,7 @@ class Pets extends Component {
             var difference = Math.abs(parseInt(this.state.userInfo[x]) - res.data[i].petInfo[x])
             totalDifference += difference;
           }
-          eachDiff.push({ totalDifference: totalDifference, name: res.data[i].name });
+          eachDiff.push({ totalDifference: totalDifference, id:res.data[i]._id, name: res.data[i].name, image: res.data[i].image});
           //Code commented out below provides a single match
           // if (totalDifference < minimumDifference) {
           //   match = i;
@@ -101,18 +101,24 @@ class Pets extends Component {
         //Sorts each pet by totalDifference in ascending order
         eachDiff.sort(function (a, b) { return a.totalDifference - b.totalDifference });
         //console.log(eachDiff);
-        let results = eachDiff
-        let matches = [];
-        results = results.map(result => {
-          //Store each item of pet information in a new object 
-          result = {
-            name: result.name
-          }
-          // console.log(result.name);
+        console.log(eachDiff)
+        // let results = eachDiff
+        // let matches = [];
+        let matches = eachDiff
+      
+        // console.log(results);
+        // results = results.map(result => {
+        //   //Store each item of pet information in a new object 
+        //   result = {
+        //     name: result.name,
+        //     image: result.image
+        //   }
+          // console.log(result);
           //Pushes each name into empty array above
-          matches.push(result.name);
-        })
-        // console.log(matches);
+          // matches.push(result.name);
+          // matches.push(result.image);
+        
+        // })
         //Pushes matches array into matches array in state
         this.setState({ matches: matches })
         //Code commented out below displays single match
@@ -219,8 +225,10 @@ class Pets extends Component {
         <Wrapper>
           {this.state.matches.map(match => (
             <Card
-              key={match}
-              name={match}
+              key={match.id}
+              name={match.name}
+              image={match.image}
+              
             />
           ))}
         </Wrapper>

@@ -5,10 +5,11 @@ import Detail from "./pages/Detail";
 import Admin from "./pages/Admin";
 import NoMatch from "./pages/NoMatch";
 import Nav from "./components/Nav";
-import Face from "./pages/Home";
 import Home from "./pages/Home";
 
+
 function App() {
+
   return (
     <Router>
       <div>
