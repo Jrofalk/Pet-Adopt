@@ -7,6 +7,7 @@ import { List, ListItem } from "../components/List";
 import { Input, Select, FormBtn } from "../components/Form";
 import { MDBContainer, MDBBtn, MDBModal, MDBModalBody, MDBModalHeader, MDBModalFooter, MDBInput } from 'mdbreact';
 import Card from "../components/Cards";
+import Wrapper from "../components/Wrapper";
 
 class Pets extends Component {
   state = {
@@ -71,11 +72,10 @@ class Pets extends Component {
   }
 
   loadPets = () => {
-    // event.preventDefault();
+
     API.getPets()
       .then(res => {
         // console.log(res)
-
         //Code commented out below involves finding a single match
         // let match = 0;
         // let minimumDifference = 50;
@@ -95,8 +95,9 @@ class Pets extends Component {
           //   minimumDifference = totalDifference;
           // }
         }
+        //Sorts each pet by totalDifference in ascending order
         eachDiff.sort(function (a, b) { return a.totalDifference - b.totalDifference });
-        console.log(eachDiff);
+        //console.log(eachDiff);
         let results = eachDiff
         let matches = [];
         results = results.map(result => {
@@ -105,9 +106,11 @@ class Pets extends Component {
             name: result.name
           }
           // console.log(result.name);
+          //Pushes each name into empty array above
           matches.push(result.name);
         })
         // console.log(matches);
+        //Pushes matches array into matches array in state
         this.setState({ matches: matches })
         //Code commented out below displays single match
         // this.setState({ match: res.data[match].name })
@@ -210,7 +213,14 @@ class Pets extends Component {
             </form>
           </Col>
         </Row>
-        {this.state.matches}
+        <Wrapper>
+          {this.state.matches.map(match => (
+            <Card
+              key={match}
+              name={match}
+            />
+          ))}
+        </Wrapper>
         {/* <MDBContainer> */}
         {/* <MDBBtn onClick={this.toggle}>Modal</MDBBtn> */}
         {/* <MDBModal isOpen={this.state.modal} toggle={this.toggle}>
