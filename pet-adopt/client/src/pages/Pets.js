@@ -100,25 +100,9 @@ class Pets extends Component {
         }
         //Sorts each pet by totalDifference in ascending order
         eachDiff.sort(function (a, b) { return a.totalDifference - b.totalDifference });
-        //console.log(eachDiff);
-        console.log(eachDiff)
-        // let results = eachDiff
-        // let matches = [];
+        //console.log(eachDiff)
         let matches = eachDiff
-      
         // console.log(results);
-        // results = results.map(result => {
-        //   //Store each item of pet information in a new object 
-        //   result = {
-        //     name: result.name,
-        //     image: result.image
-        //   }
-          // console.log(result);
-          //Pushes each name into empty array above
-          // matches.push(result.name);
-          // matches.push(result.image);
-        
-        // })
         //Pushes matches array into matches array in state
         this.setState({ matches: matches })
         //Code commented out below displays single match
@@ -272,6 +256,3 @@ class Pets extends Component {
 
 export default Pets;
 
-
-////SAVE ALL USER DATA INCLUDING RESPONSES FOR MATCH TO USER DATABASE
-///CREATE HOMEPAGE WITH JUMBOTRON

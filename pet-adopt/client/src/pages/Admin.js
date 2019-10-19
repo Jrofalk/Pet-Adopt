@@ -1,7 +1,6 @@
 // import DeleteBtn from "../components/DeleteBtn";
 // import API from "../utils/API";
 import { Col, Row, Container } from "../components/Grid";
-// import React from "react";
 import Jumbotron from "../components/Jumbotron";
 import { Input, Select, FormBtn } from "../components/Form";
 import API from "../utils/API";
@@ -9,10 +8,8 @@ import API from "../utils/API";
 import React, { Component } from "react";
 import { EventEmitter } from "events";
 import { MDBContainer, MDBBtn, MDBModal, MDBModalBody, MDBModalHeader, MDBModalFooter, MDBInput } from 'mdbreact';
-// import React from "react";
+import Axios from "axios";
 // import ReactDOM from "react-dom";
-
-
 
 class Admin extends Component {
   state = {
@@ -47,11 +44,17 @@ class Admin extends Component {
     API.saveUser(userData
     )
       .then(console.log("User saved"));
+    //LogIn
 
-  }
-
-  handleLogIn = event => {
-    event.preventDefault();
+  //   event.preventDefault();
+  //   Axios.post('/users/login', {
+  //     email: this.state.email,
+  //     password: this.state.password
+  //   })
+  //  .then(response => {
+  //    console.log(response)
+  //  }
+  //   )
   }
 
   handleFindPet = event => {
@@ -140,7 +143,6 @@ class Admin extends Component {
             <MDBModalFooter>
               <MDBBtn color="secondary" onClick={this.toggle}>Close</MDBBtn>
               <MDBBtn color="primary" onClick={this.handleFormSubmit}>Submit</MDBBtn>
-              <MDBBtn color="primary" onClick={this.handleLogIn}>Log In</MDBBtn>
             </MDBModalFooter>
           </MDBModal>
         </MDBContainer>
@@ -150,8 +152,5 @@ class Admin extends Component {
 }
 
 export default Admin;
-
-
-//WORK ON AUTHENTICATION
 
 //THEN DELETE ROUTE FOR EACH CARD ON THIS PAGE, SET UP CARDS AS YOU DID ON PETS PAGE: MUST ADD DELETE BUTTON TO CARD COMPONENT

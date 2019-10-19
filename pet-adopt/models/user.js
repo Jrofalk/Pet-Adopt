@@ -16,7 +16,15 @@ const UserSchema = new mongoose.Schema({
   
 });
 
-
+//Passport
+// userSchema.methods = {
+//   checkPassword: function (inputPassword) {
+//   return bcrypt.compareSync(inputPassword, this.password)
+// },
+//   hashPassword: plainTextPassword => {
+//   return bcrypt.hashSync(plainTextPassword, 10)
+//   }
+// }
 
 UserSchema.pre('save', function(next) {
     // Check if document is new or a new password has been set
