@@ -9,6 +9,8 @@ import React, { Component } from "react";
 import { EventEmitter } from "events";
 import { MDBContainer, MDBBtn, MDBModal, MDBModalBody, MDBModalHeader, MDBModalFooter, MDBInput } from 'mdbreact';
 import Axios from "axios";
+import Card from "../components/Cards";
+import Wrapper from "../components/Wrapper";
 // import ReactDOM from "react-dom";
 
 class Admin extends Component {
@@ -17,7 +19,9 @@ class Admin extends Component {
     password: "",
     modal: false,
     petName: "",
-    userName: ""
+    userName: "",
+    petsName: "",
+    petImage:""
 
   };
 
@@ -62,7 +66,15 @@ class Admin extends Component {
     let name = this.state.petName
     API.getOnePet(name)
       .then(res => {
-        console.log(res.data);
+        console.log(res.data)
+        console.log(res.data.name)
+        this.setState({petsName: res.data.name})
+        this.setState({petImage: res.data.image})
+        // let matches = []
+        // matches.push(res.data.name)
+        // matches.push(res.data._id)
+        // matches.push(res.data.image)
+        // this.setState({matches: matches})
       })
   }
 
@@ -120,32 +132,38 @@ class Admin extends Component {
             </form>
           </Col>
         </Row>
-        <MDBContainer>
+        <Wrapper>
+            <Card
+            name={this.state.petsName}
+            image={this.state.petImage}
+            />
+        </Wrapper>
+        {/* <MDBContainer> */}
           {/* <MDBBtn onClick={this.toggle}>Modal</MDBBtn> */}
-          <MDBModal isOpen={this.state.modal} toggle={this.toggle}>
+          {/* <MDBModal isOpen={this.state.modal} toggle={this.toggle}>
             <MDBModalHeader toggle={this.toggle}>Admin</MDBModalHeader>
             <MDBModalBody>
               <MDBInput
                 onChange={this.handleInputChange}
                 value={this.state.email}
                 name="email"
-                label="Email">
+                label="Email"> */}
                 {/* {this.state.name} */}
-              </MDBInput>
+              {/* </MDBInput>
               <MDBInput
                 onChange={this.handleInputChange}
                 value={this.state.password}
                 name="password"
-                label="Password">
+                label="Password"> */}
                 {/* {this.state.email} */}
-              </MDBInput>
+              {/* </MDBInput>
             </MDBModalBody>
             <MDBModalFooter>
               <MDBBtn color="secondary" onClick={this.toggle}>Close</MDBBtn>
               <MDBBtn color="primary" onClick={this.handleFormSubmit}>Submit</MDBBtn>
             </MDBModalFooter>
           </MDBModal>
-        </MDBContainer>
+        </MDBContainer> */}
       </Container>
     );
   }

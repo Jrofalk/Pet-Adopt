@@ -8,7 +8,10 @@ import { Input, Select, FormBtn } from "../components/Form";
 import { MDBContainer, MDBBtn, MDBModal, MDBModalBody, MDBModalHeader, MDBModalFooter, MDBInput } from 'mdbreact';
 import Card from "../components/Cards";
 import Wrapper from "../components/Wrapper";
-
+import {
+  MDBCarousel, MDBCarouselInner, MDBCarouselItem, MDBRow, MDBCol, MDBCard, MDBCardImage,
+  MDBCardBody, MDBCardTitle, MDBCardText
+} from "mdbreact";
 
 
 
@@ -91,7 +94,7 @@ class Pets extends Component {
             var difference = Math.abs(parseInt(this.state.userInfo[x]) - res.data[i].petInfo[x])
             totalDifference += difference;
           }
-          eachDiff.push({ totalDifference: totalDifference, id:res.data[i]._id, name: res.data[i].name, image: res.data[i].image});
+          eachDiff.push({ totalDifference: totalDifference, id: res.data[i]._id, name: res.data[i].name, image: res.data[i].image });
           //Code commented out below provides a single match
           // if (totalDifference < minimumDifference) {
           //   match = i;
@@ -102,7 +105,7 @@ class Pets extends Component {
         eachDiff.sort(function (a, b) { return a.totalDifference - b.totalDifference });
         //console.log(eachDiff)
         let matches = eachDiff
-        // console.log(results);
+        console.log(matches)
         //Pushes matches array into matches array in state
         this.setState({ matches: matches })
         //Code commented out below displays single match
@@ -212,7 +215,7 @@ class Pets extends Component {
               key={match.id}
               name={match.name}
               image={match.image}
-              
+
             />
           ))}
         </Wrapper>
@@ -250,6 +253,7 @@ class Pets extends Component {
           </MDBModal>
         </MDBContainer> */}
       </Container>
+
     );
   }
 }
