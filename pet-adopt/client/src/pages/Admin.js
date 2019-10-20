@@ -63,6 +63,11 @@ class Admin extends Component {
     //   )
   }
 
+  handleDeletePet = () => {
+    // event.preventDefault();
+    console.log('Delete Pet')
+  }
+
   handleFindPet = event => {
     event.preventDefault();
     let name = this.state.petName
@@ -139,6 +144,7 @@ class Admin extends Component {
               key={match.id}
               name={match.name}
               image={match.image}
+              handleDeletePet={this.handleDeletePet}
             />
           ))}
         </Wrapper>
@@ -150,7 +156,7 @@ class Admin extends Component {
               email={userMatch.email}
               telephone={userMatch.telephone}
             />
-            
+
           ))}
         </Wrapper>
 
