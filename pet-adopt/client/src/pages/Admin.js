@@ -1,4 +1,3 @@
-// import DeleteBtn from "../components/DeleteBtn";
 // import API from "../utils/API";
 import { Col, Row, Container } from "../components/Grid";
 import Jumbotron from "../components/Jumbotron";
@@ -11,6 +10,7 @@ import { MDBContainer, MDBBtn, MDBModal, MDBModalBody, MDBModalHeader, MDBModalF
 import Axios from "axios";
 import Card from "../components/Cards";
 import Wrapper from "../components/Wrapper";
+import UserCards from "../components/UserCards";
 // import ReactDOM from "react-dom";
 
 class Admin extends Component {
@@ -144,12 +144,13 @@ class Admin extends Component {
         </Wrapper>
         <Wrapper>
           {this.state.userMatches.map(userMatch => (
-            <Card
+            <UserCards
               key={userMatch.id}
               name={userMatch.name}
               email={userMatch.email}
               telephone={userMatch.telephone}
             />
+            
           ))}
         </Wrapper>
 
@@ -188,12 +189,6 @@ export default Admin;
 
 //THEN DELETE ROUTE FOR EACH CARD ON THIS PAGE, SET UP CARDS AS YOU DID ON PETS PAGE: MUST ADD DELETE BUTTON TO CARD COMPONENT
 //CREATE Create route to create pet on admin side
-
-
-//Try changing search for one pet route so that it searches for all pets, and then only console logs if name matches search name; base off loop in pets
-//This might do better job of displaying cards
-
-//IF CANT GET THIS LOOP TO WORK, STOP FOCUSING ON ADMIN
 
 //CREATE WAY TO "LOVE" PETS AND DISPLAY ON DETAILS PAGE LIKE BOOK SEARCH, THEN ALLOW ADMIN TO SEE LOVED PETS VIA SEARCH
 //THIS REQUIRES SEARCH BY A SPECIFIC CRITERIA. LOOK UP HOW TO DO
