@@ -21,8 +21,8 @@ class Admin extends Component {
     petName: "",
     userName: "",
     petsName: "",
-    petImage:""
-
+    petImage:"",
+    matches: []
   };
 
 
@@ -48,6 +48,7 @@ class Admin extends Component {
     API.saveUser(userData
     )
       .then(console.log("User saved"));
+      
     //LogIn
 
   //   event.preventDefault();
@@ -66,15 +67,11 @@ class Admin extends Component {
     let name = this.state.petName
     API.getOnePet(name)
       .then(res => {
-        console.log(res.data)
-        console.log(res.data.name)
-        this.setState({petsName: res.data.name})
-        this.setState({petImage: res.data.image})
-        // let matches = []
-        // matches.push(res.data.name)
-        // matches.push(res.data._id)
-        // matches.push(res.data.image)
-        // this.setState({matches: matches})
+        //console.log(res.data)
+        let matches = []  
+        matches.push({name: res.data.name, id: res.data._id, image: res.data.image })
+        console.log(matches);
+        this.setState({matches:matches})
       })
   }
 
@@ -133,11 +130,15 @@ class Admin extends Component {
           </Col>
         </Row>
         <Wrapper>
+        {this.state.matches.map(match => (
             <Card
-            name={this.state.petsName}
-            image={this.state.petImage}
+              key={match.id}
+              name={match.name}
+              image={match.image}
             />
+        ))}
         </Wrapper>
+        
         {/* <MDBContainer> */}
           {/* <MDBBtn onClick={this.toggle}>Modal</MDBBtn> */}
           {/* <MDBModal isOpen={this.state.modal} toggle={this.toggle}>
@@ -172,3 +173,13 @@ class Admin extends Component {
 export default Admin;
 
 //THEN DELETE ROUTE FOR EACH CARD ON THIS PAGE, SET UP CARDS AS YOU DID ON PETS PAGE: MUST ADD DELETE BUTTON TO CARD COMPONENT
+//CREATE Create route to create pet on admin side
+
+
+//Try changing search for one pet route so that it searches for all pets, and then only console logs if name matches search name; base off loop in pets
+//This might do better job of displaying cards
+
+//IF CANT GET THIS LOOP TO WORK, STOP FOCUSING ON ADMIN
+
+//CREATE WAY TO "LOVE" PETS AND DISPLAY ON DETAILS PAGE LIKE BOOK SEARCH, THEN ALLOW ADMIN TO SEE LOVED PETS VIA SEARCH
+//THIS REQUIRES SEARCH BY A SPECIFIC CRITERIA. LOOK UP HOW TO DO
