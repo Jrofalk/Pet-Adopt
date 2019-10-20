@@ -21,8 +21,9 @@ class Admin extends Component {
     petName: "",
     userName: "",
     petsName: "",
-    petImage:"",
-    matches: []
+    petImage: "",
+    matches: [],
+    userMatches: []
   };
 
 
@@ -48,18 +49,18 @@ class Admin extends Component {
     API.saveUser(userData
     )
       .then(console.log("User saved"));
-      
+
     //LogIn
 
-  //   event.preventDefault();
-  //   Axios.post('/users/login', {
-  //     email: this.state.email,
-  //     password: this.state.password
-  //   })
-  //  .then(response => {
-  //    console.log(response)
-  //  }
-  //   )
+    //   event.preventDefault();
+    //   Axios.post('/users/login', {
+    //     email: this.state.email,
+    //     password: this.state.password
+    //   })
+    //  .then(response => {
+    //    console.log(response)
+    //  }
+    //   )
   }
 
   handleFindPet = event => {
@@ -68,10 +69,10 @@ class Admin extends Component {
     API.getOnePet(name)
       .then(res => {
         //console.log(res.data)
-        let matches = []  
-        matches.push({name: res.data.name, id: res.data._id, image: res.data.image })
+        let matches = []
+        matches.push({ name: res.data.name, id: res.data._id, image: res.data.image })
         console.log(matches);
-        this.setState({matches:matches})
+        this.setState({ matches: matches })
       })
   }
 
@@ -81,6 +82,9 @@ class Admin extends Component {
     API.getOneUser(name)
       .then(res => {
         console.log(res.data);
+        let userMatches = []
+        userMatches.push({ name: res.data.name, id: res.data._id, email: res.data.email, telephone: res.data.telephone })
+        this.setState({ userMatches: userMatches })
       })
   }
 
@@ -130,18 +134,28 @@ class Admin extends Component {
           </Col>
         </Row>
         <Wrapper>
-        {this.state.matches.map(match => (
+          {this.state.matches.map(match => (
             <Card
               key={match.id}
               name={match.name}
               image={match.image}
             />
-        ))}
+          ))}
         </Wrapper>
-        
+        <Wrapper>
+          {this.state.userMatches.map(userMatch => (
+            <Card
+              key={userMatch.id}
+              name={userMatch.name}
+              email={userMatch.email}
+              telephone={userMatch.telephone}
+            />
+          ))}
+        </Wrapper>
+
         {/* <MDBContainer> */}
-          {/* <MDBBtn onClick={this.toggle}>Modal</MDBBtn> */}
-          {/* <MDBModal isOpen={this.state.modal} toggle={this.toggle}>
+        {/* <MDBBtn onClick={this.toggle}>Modal</MDBBtn> */}
+        {/* <MDBModal isOpen={this.state.modal} toggle={this.toggle}>
             <MDBModalHeader toggle={this.toggle}>Admin</MDBModalHeader>
             <MDBModalBody>
               <MDBInput
@@ -149,15 +163,15 @@ class Admin extends Component {
                 value={this.state.email}
                 name="email"
                 label="Email"> */}
-                {/* {this.state.name} */}
-              {/* </MDBInput>
+        {/* {this.state.name} */}
+        {/* </MDBInput>
               <MDBInput
                 onChange={this.handleInputChange}
                 value={this.state.password}
                 name="password"
                 label="Password"> */}
-                {/* {this.state.email} */}
-              {/* </MDBInput>
+        {/* {this.state.email} */}
+        {/* </MDBInput>
             </MDBModalBody>
             <MDBModalFooter>
               <MDBBtn color="secondary" onClick={this.toggle}>Close</MDBBtn>

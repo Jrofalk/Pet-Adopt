@@ -8,6 +8,8 @@ function Card(props) {
         <div className="img-container">
           <img id={props.id} src={props.image}/>
           <p>{props.name}</p>
+          <a href={"mailto:" + props.email}>Email</a>
+          <p>{props.telephone}</p>
         </div>
       </div>
     );
