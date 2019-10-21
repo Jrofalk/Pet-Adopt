@@ -40,7 +40,7 @@ class Home extends Component {
                 <MDBMask overlay="black-light" />
               </MDBView>
               <MDBCarouselCaption>
-                <h1 className="display-1">PET ADOPT</h1>
+                <h1 className="display-1" style={{position:'relative', bottom: "200px"}}>PET ADOPT</h1>
                 {/* <p>First text</p> */}
               </MDBCarouselCaption>
             </MDBCarouselItem>
