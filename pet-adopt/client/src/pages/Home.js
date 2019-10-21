@@ -10,6 +10,7 @@ import React, { Component } from "react";
 import { EventEmitter } from "events";
 import { MDBCarousel, MDBCarouselCaption, MDBCarouselInner, MDBCarouselItem, MDBView, MDBMask, MDBContainer } from
   "mdbreact";
+import {image} from "../assets/images/fritz.jpg";
 
 class Home extends Component {
   state = {
@@ -29,12 +30,13 @@ class Home extends Component {
           showIndicators={true}
           className="z-depth-1"
         >
-          <MDBCarouselInner>
+          <MDBCarouselInner style={{height: "550px"}}>
             <MDBCarouselItem itemId="1">
               <MDBView>
-                <img
+                <img style={{bottom: "50px"}}
                   className="d-block w-100"
-                  src="https://mdbootstrap.com/img/Photos/Slides/img%20(68).jpg"
+                  src="https://www.tiffanybolkphotography.com/wp-content/uploads/2018/08/Cat-Photography-10.jpg"
+                 // src={require("../assets/images/fritz.jpg")}
                   alt="First slide"
                 />
                 <MDBMask overlay="black-light" />
