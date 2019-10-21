@@ -48,16 +48,15 @@ class Home extends Component {
             </MDBCarouselItem>
             <MDBCarouselItem itemId="2">
               <MDBView>
-                <img
-                  // className="d-block w-100"
-                  // src="https://mdbootstrap.com/img/Photos/Slides/img%20(6).jpg"
-                  // alt="Second slide"
+                <img style={{bottom: "30px"}}
+                  className="d-block w-100"
+                  src="https://yuppypuppyspa.com/wp-content/uploads/2016/07/iStock_92168649_LARGE_1.jpg"
+                  alt="Second slide"
                 />
                 <MDBMask overlay="black-strong" />
               </MDBView>
               <MDBCarouselCaption>
-                <h3 className="h3-responsive">Strong mask</h3>
-                <p>Second text</p>
+                <h3 className="h3-responsive">Find Your Best Friend</h3>
               </MDBCarouselCaption>
             </MDBCarouselItem>
           </MDBCarouselInner>
