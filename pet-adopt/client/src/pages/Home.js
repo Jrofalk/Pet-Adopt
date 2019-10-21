@@ -10,7 +10,6 @@ import React, { Component } from "react";
 import { EventEmitter } from "events";
 import { MDBContainer, MDBBtn, MDBModal, MDBModalBody, MDBModalHeader, MDBModalFooter, MDBInput } from 'mdbreact';
 
-
 class Home extends Component {
   state = {
     email: "",

@@ -1,6 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./style.css";
+import { faGithubAlt } from '@fortawesome/free-brands-svg-icons';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+
 
 function Nav() {
   return (
@@ -17,6 +21,9 @@ function Nav() {
             <a className="nav-link" href="/admin"><button type="button" className="btn">Admin</button></a>
           </li>
         </ul>
+      </div>
+      <div className='justify-content-right'>
+        <a className="nav-link" href="https://github.com/Jrofalk/Pet-Adopt" target="_blank"><FontAwesomeIcon icon={faGithubAlt} style={{ color: 'black' }} /></a>
       </div>
     </nav>
   );

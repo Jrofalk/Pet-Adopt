@@ -209,3 +209,19 @@ export default Admin;
 
 //CREATE WAY TO "LOVE" PETS AND DISPLAY ON DETAILS PAGE LIKE BOOK SEARCH, THEN ALLOW ADMIN TO SEE LOVED PETS VIA SEARCH
 //THIS REQUIRES SEARCH BY A SPECIFIC CRITERIA. LOOK UP HOW TO DO
+
+
+
+//IMPORTANT
+
+//Create fake login for admin side
+
+//Title user side of search as Sign Up or something
+
+//Create create route for a new pet on admin side (2)
+
+//Launch on Heroku
+
+//Style (1)
+
+//Finish slides on Tuesday
