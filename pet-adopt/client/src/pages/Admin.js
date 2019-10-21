@@ -26,7 +26,6 @@ class Admin extends Component {
     userMatches: []
   };
 
-
   toggle = () => {
     this.setState({
       modal: !this.state.modal
@@ -38,7 +37,6 @@ class Admin extends Component {
     this.setState({
       modal: !this.state.modal
     });
-
   }
 
   handleFormSubmit = event => {
@@ -52,7 +50,6 @@ class Admin extends Component {
       .then(console.log("User saved"));
 
     //LogIn
-
     //   event.preventDefault();
     //   Axios.post('/users/login', {
     //     email: this.state.email,
@@ -67,12 +64,18 @@ class Admin extends Component {
   handleDeletePet = event => {
     let id = event.target.getAttribute('data-id');
     console.log(id);
-    // event.preventDefault();
     API.deletePet(id)
       .then(window.location.reload())
     //.catch(err => console.log(err));
     console.log('Deleted Pet')
+  }
 
+  handleDeleteUser = event => {
+    let id = event.target.getAttribute('data-id');
+    console.log(id);
+    API.deleteUser(id)
+      .then(window.location.reload())
+    console.log('Deleted User')
   }
 
   handleFindPet = event => {
@@ -155,21 +158,21 @@ class Admin extends Component {
               matches={this.state.matches}
               handleDeletePet={this.handleDeletePet}
             />
-
           ))}
         </Wrapper>
         <Wrapper>
           {this.state.userMatches.map(userMatch => (
             <UserCards
               key={userMatch.id}
+              id={userMatch.id}
               name={userMatch.name}
               email={userMatch.email}
               telephone={userMatch.telephone}
+              userMatches={this.state.userMatches}
+              handleDeleteUser={this.handleDeleteUser}
             />
-
           ))}
         </Wrapper>
-
         {/* <MDBContainer> */}
         {/* <MDBBtn onClick={this.toggle}>Modal</MDBBtn> */}
         {/* <MDBModal isOpen={this.state.modal} toggle={this.toggle}>
@@ -202,8 +205,6 @@ class Admin extends Component {
 }
 
 export default Admin;
-
-//THEN DELETE ROUTE FOR EACH CARD ON THIS PAGE, SET UP CARDS AS YOU DID ON PETS PAGE: MUST ADD DELETE BUTTON TO CARD COMPONENT
 //CREATE Create route to create pet on admin side
 
 //CREATE WAY TO "LOVE" PETS AND DISPLAY ON DETAILS PAGE LIKE BOOK SEARCH, THEN ALLOW ADMIN TO SEE LOVED PETS VIA SEARCH

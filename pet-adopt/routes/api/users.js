@@ -8,6 +8,8 @@ router
     .route("/:name")
     .get(usersController.findOne)
 
-
+router
+    .route("/:id")
+    .delete(usersController.remove)
 
 module.exports = router;

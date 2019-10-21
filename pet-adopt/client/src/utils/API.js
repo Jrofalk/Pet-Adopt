@@ -9,6 +9,7 @@ export default {
   getPet: function(id) {
     return axios.get("/api/pets/" + id);
   },
+  //Gets a single pet by name
   getOnePet: function (name) {
     return axios.get("/api/pets/" + name);
   },
@@ -23,7 +24,12 @@ export default {
   saveUser: function(userData) {
     return axios.post("/api/users", userData);
   },
+  // Gets a single user by name
   getOneUser: function (name) {
     return axios.get("/api/users/" + name);
-  }
+  },
+  //Deletes the user with the given id
+  deleteUser: function(id) {
+    return axios.delete("/api/users/" + id);
+  },
 };

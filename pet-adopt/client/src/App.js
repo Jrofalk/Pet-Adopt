@@ -20,6 +20,7 @@ function App() {
           <Route exact path="/admin" component={Admin}/>
           <Route exact path="/pets/:name" component={Admin} />
           <Route exact path="/pets/:id" component={Admin} />
+          <Route exact path="/users/:id" component={Admin}/>
           <Route component={NoMatch} />
         </Switch>
       </div>

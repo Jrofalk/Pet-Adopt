@@ -9,7 +9,6 @@ router
   .route("/:name")
   .get(petsController.findOne)
   .put(petsController.update)
-  // .delete(petsController.remove)
 
   router
     .route("/:id")

@@ -5,7 +5,7 @@ function UserCards(props) {
   console.log(props);
   return (
     <div className="card">
-      <button className="btn btn-danger" tabIndex="0" >
+      <button className="btn btn-danger" tabIndex="0" data-id={props.id} onClick={props.handleDeleteUser}>
         Delete
       </button>
       <div className="img-container">
