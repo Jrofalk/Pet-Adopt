@@ -33,7 +33,7 @@ class Home extends Component {
           <MDBCarouselInner style={{height: "550px"}}>
             <MDBCarouselItem itemId="1">
               <MDBView>
-                <img style={{bottom: "60px"}}
+                <img 
                   className="d-block w-100"
                   src="https://www.tiffanybolkphotography.com/wp-content/uploads/2018/08/Cat-Photography-10.jpg"
                  // src={require("../assets/images/fritz.jpg")}
@@ -48,7 +48,7 @@ class Home extends Component {
             </MDBCarouselItem>
             <MDBCarouselItem itemId="2">
               <MDBView>
-                <img style={{bottom: "30px"}}
+                <img 
                   className="d-block w-100"
                   src="https://yuppypuppyspa.com/wp-content/uploads/2016/07/iStock_92168649_LARGE_1.jpg"
                   alt="Second slide"
@@ -56,7 +56,7 @@ class Home extends Component {
                 <MDBMask overlay="black-strong" />
               </MDBView>
               <MDBCarouselCaption>
-                <h3 className="h3-responsive">Find Your Best Friend</h3>
+                <h3 className="h3-responsive" style={{position:'relative', bottom: "0px"}}>Find Your Best Friend</h3>
               </MDBCarouselCaption>
             </MDBCarouselItem>
           </MDBCarouselInner>
