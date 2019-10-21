@@ -4,7 +4,7 @@ import API from "../utils/API";
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
-import { Input, Select, FormBtn } from "../components/Form";
+import { Input, SelectOne, SelectTwo, FormBtn } from "../components/Form";
 import { MDBContainer, MDBBtn, MDBModal, MDBModalBody, MDBModalHeader, MDBModalFooter, MDBInput } from 'mdbreact';
 import MatchCard from "../components/MatchCard";
 import Wrapper from "../components/Wrapper";
@@ -12,8 +12,6 @@ import {
   MDBCarousel, MDBCarouselInner, MDBCarouselItem, MDBRow, MDBCol, MDBCard, MDBCardImage,
   MDBCardBody, MDBCardTitle, MDBCardText
 } from "mdbreact";
-
-
 
 
 class Pets extends Component {
@@ -188,15 +186,18 @@ class Pets extends Component {
           </Col>
           <Col size='md-4'>
             <form>
-              <Select value={this.state.choiceOne}
+              <label>How many hours per day can you dedicate to your pet?</label>
+              <SelectOne value={this.state.choiceOne}
                 onChange={this.handleInputChange}
                 name="choiceOne"
               />
-              <Select value={this.state.choiceTwo}
+              <label>How many pets (cats/dogs) currently reside within your household?</label>
+              <SelectTwo value={this.state.choiceTwo}
                 onChange={this.handleInputChange}
                 name="choiceTwo"
               />
-              <Select value={this.state.choiceThree}
+              <label>How many children currently reside in your home?</label>
+              <SelectTwo value={this.state.choiceThree}
                 onChange={this.handleInputChange}
                 name="choiceThree"
               />
