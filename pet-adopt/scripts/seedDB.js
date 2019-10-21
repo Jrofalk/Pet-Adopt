@@ -16,7 +16,11 @@ const petSeed = [
     petInfo: [
       1,
       2,
-      3
+      3,
+      1,
+      2,
+      1,
+      1
     ],
     image: "https://images.pexels.com/photos/104827/cat-pet-animal-domestic-104827.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",  
     date: new Date(Date.now())
@@ -26,7 +30,11 @@ const petSeed = [
     petInfo: [
       2,
       2,
-      2
+      2,
+      2,
+      2,
+      2,
+      1
     ],
     image: "https://dyl62eh9y96rk.cloudfront.net/wp-content/uploads/2017/03/16151857/MG_6671-1024x686.jpg",
     date: new Date(Date.now())
@@ -36,7 +44,11 @@ const petSeed = [
     petInfo: [
       3,
       3,
-      3
+      3,
+      4,
+      3,
+      1,
+      1
     ],
     image: "https://images.pexels.com/photos/104827/cat-pet-animal-domestic-104827.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
     date: new Date(Date.now())

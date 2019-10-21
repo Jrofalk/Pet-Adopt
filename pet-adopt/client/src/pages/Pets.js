@@ -4,7 +4,7 @@ import API from "../utils/API";
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
-import { Input, SelectOne, SelectTwo, FormBtn } from "../components/Form";
+import { Input, SelectOne, SelectTwo, SelectThree, SelectFour, SelectFive, SelectSix, FormBtn } from "../components/Form";
 import { MDBContainer, MDBBtn, MDBModal, MDBModalBody, MDBModalHeader, MDBModalFooter, MDBInput } from 'mdbreact';
 import MatchCard from "../components/MatchCard";
 import Wrapper from "../components/Wrapper";
@@ -29,6 +29,10 @@ class Pets extends Component {
     choiceOne: "",
     choiceTwo: "",
     choiceThree: "",
+    choiceFour: "",
+    choiceFive: "",
+    choiceSix: "",
+    choiceSeven: "",
     matches: [],
     // modal: false,
     text: ""
@@ -72,6 +76,10 @@ class Pets extends Component {
     choices.push(this.state.choiceOne);
     choices.push(this.state.choiceTwo);
     choices.push(this.state.choiceThree);
+    choices.push(this.state.choiceFour);
+    choices.push(this.state.choiceFive);
+    choices.push(this.state.choiceSix);
+    choices.push(this.state.choiceSeven);
     this.setState({ userInfo: choices })
     // console.log(this.state.userInfo);
   }
@@ -196,10 +204,35 @@ class Pets extends Component {
                 onChange={this.handleInputChange}
                 name="choiceTwo"
               />
+              <label>If there is another pet present in your household, is it a dog or cat?</label>
+              <SelectFour value={this.state.choiceFive}
+                onChange={this.handleInputChange}
+                name="choiceFive"
+              />
+
               <label>How many children currently reside in your home?</label>
               <SelectTwo value={this.state.choiceThree}
                 onChange={this.handleInputChange}
                 name="choiceThree"
+              />
+              </form>
+              </Col>
+              <Col size='md-4'>
+              <form>
+              <label>Would you be willing to care for a pet with special medical needs? (Administering medication, etc.)</label>
+              <SelectThree value={this.state.choiceFour}
+                onChange={this.handleInputChange}
+                name="choiceFour"
+              />
+              <label>Would you be willing to commit to at least one long walk a day?</label>
+              <SelectFive value={this.state.choiceSix}
+                onChange={this.handleInputChange}
+                name="choiceSix"
+              />
+              <label>How would you describe the relative size of your living space?</label>
+              <SelectSix value={this.state.choiceSeven}
+                onChange={this.handleInputChange}
+                name="choiceSeven"
               />
               <FormBtn
                 // onClick={this.handleFormSubmit}
