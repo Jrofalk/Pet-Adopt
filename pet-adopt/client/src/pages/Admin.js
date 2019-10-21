@@ -8,7 +8,7 @@ import React, { Component } from "react";
 import { EventEmitter } from "events";
 import { MDBContainer, MDBBtn, MDBModal, MDBModalBody, MDBModalHeader, MDBModalFooter, MDBInput } from 'mdbreact';
 import Axios from "axios";
-import Card from "../components/Cards";
+import PetCards from "../components/PetCards";
 import Wrapper from "../components/Wrapper";
 import UserCards from "../components/UserCards";
 // import ReactDOM from "react-dom";
@@ -150,7 +150,7 @@ class Admin extends Component {
         </Row>
         <Wrapper>
           {this.state.matches.map(match => (
-            <Card
+            <PetCards
               key={match.id}
               id={match.id}
               name={match.name}

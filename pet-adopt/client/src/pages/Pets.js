@@ -6,7 +6,7 @@ import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
 import { Input, Select, FormBtn } from "../components/Form";
 import { MDBContainer, MDBBtn, MDBModal, MDBModalBody, MDBModalHeader, MDBModalFooter, MDBInput } from 'mdbreact';
-import Card from "../components/Cards";
+import MatchCard from "../components/MatchCard";
 import Wrapper from "../components/Wrapper";
 import {
   MDBCarousel, MDBCarouselInner, MDBCarouselItem, MDBRow, MDBCol, MDBCard, MDBCardImage,
@@ -211,7 +211,7 @@ class Pets extends Component {
         </Row>
         <Wrapper>
           {this.state.matches.map(match => (
-            <Card
+            <MatchCard
               key={match.id}
               name={match.name}
               image={match.image}
