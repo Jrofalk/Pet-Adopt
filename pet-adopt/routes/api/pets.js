@@ -9,6 +9,11 @@ router
   .route("/:name")
   .get(petsController.findOne)
   .put(petsController.update)
-  .delete(petsController.remove)
+  // .delete(petsController.remove)
+
+  router
+    .route("/:id")
+    .delete(petsController.remove)
+
 
 module.exports = router;

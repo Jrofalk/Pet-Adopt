@@ -38,6 +38,7 @@ class Admin extends Component {
     this.setState({
       modal: !this.state.modal
     });
+
   }
 
   handleFormSubmit = event => {
@@ -63,9 +64,15 @@ class Admin extends Component {
     //   )
   }
 
-  handleDeletePet = () => {
+  handleDeletePet = event => {
+    let id = event.target.getAttribute('data-id');
+    console.log(id);
     // event.preventDefault();
-    console.log('Delete Pet')
+    API.deletePet(id)
+      .then(window.location.reload())
+    //.catch(err => console.log(err));
+    console.log('Deleted Pet')
+
   }
 
   handleFindPet = event => {
@@ -73,7 +80,7 @@ class Admin extends Component {
     let name = this.state.petName
     API.getOnePet(name)
       .then(res => {
-        //console.log(res.data)
+        console.log(res.data)
         let matches = []
         matches.push({ name: res.data.name, id: res.data._id, image: res.data.image })
         console.log(matches);
@@ -142,10 +149,13 @@ class Admin extends Component {
           {this.state.matches.map(match => (
             <Card
               key={match.id}
+              id={match.id}
               name={match.name}
               image={match.image}
+              matches={this.state.matches}
               handleDeletePet={this.handleDeletePet}
             />
+
           ))}
         </Wrapper>
         <Wrapper>
