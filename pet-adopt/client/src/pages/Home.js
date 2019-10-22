@@ -28,14 +28,14 @@ class Home extends Component {
   render() {
     return (
       <MDBContainer>
-        <MDBCarousel
+        <MDBCarousel 
           activeItem={1}
           length={2}
           showControls={true}
           showIndicators={true}
           className="z-depth-1"
         >
-          <MDBCarouselInner style={{ height: "550px" }}>
+          <MDBCarouselInner style={{ height: "550px"}}>
             <MDBCarouselItem itemId="1">
               <MDBView>
                 <img
@@ -68,7 +68,6 @@ class Home extends Component {
         </MDBCarousel>
         <MDBFooter color="white" className="font-small pt-4 mt-4">
           <MDBContainer fluid className="text-center text-md-left">
-
             <MDBContainer fluid>
               <a className="nav-link text-center" href="https://github.com/Jrofalk/Pet-Adopt" target="_blank"><FontAwesomeIcon icon={faGithubAlt} style={{ color: 'black', fontSize: "24px" }} /></a>
             </MDBContainer>

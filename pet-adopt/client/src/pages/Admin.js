@@ -203,7 +203,7 @@ class Admin extends Component {
             </MDBModalFooter>
           </MDBModal>
         </MDBContainer> */}
-        <MDBFooter color="white" className="font-small pt-4 mt-4">
+        <MDBFooter color="white" className="font-small pt-4 mt-4 fixed-bottom">
           <MDBContainer fluid className="text-center text-md-left">
 
             <MDBContainer fluid>
