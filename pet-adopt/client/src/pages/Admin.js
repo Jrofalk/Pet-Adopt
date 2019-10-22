@@ -216,7 +216,6 @@ export default Admin;
 
 //Create fake login for admin side
 
-//Create slides (1)
 
 //Create create route for a new pet on admin side (2)
 
