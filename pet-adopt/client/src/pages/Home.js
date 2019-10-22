@@ -33,7 +33,7 @@ class Home extends Component {
         <MDBCarouselInner style={{ height: "550px" }}>
           <MDBCarouselItem itemId="1">
             <MDBView>
-              <img
+              <img 
                 className="d-block w-100"
                 src="https://www.tiffanybolkphotography.com/wp-content/uploads/2018/08/Cat-Photography-10.jpg"
                 // src={require("../assets/images/fritz.jpg")}
