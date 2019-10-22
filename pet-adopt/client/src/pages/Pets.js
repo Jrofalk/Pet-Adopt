@@ -11,6 +11,10 @@ import Wrapper from "../components/Wrapper";
 import Jumbotron from "../components/Jumbotron";
 import { MDBCarousel, MDBCarouselCaption, MDBCarouselInner, MDBCarouselItem, MDBView, MDBMask } from
   "mdbreact";
+import { MDBCol, MDBRow, MDBFooter } from "mdbreact";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithubAlt } from '@fortawesome/free-brands-svg-icons';
+
 
 
 
@@ -142,7 +146,7 @@ class Pets extends Component {
           <MDBMask overlay="black-light" />
         </MDBView>
         <MDBCarouselCaption style={{ top: "675px" }}>
-          <h3 className="h3-responsive" style={{fontSize: "24px", fontFamily: 'Yantramanav, sans-serif', opacity: "0.7"}}>Make A Meaningful Connection</h3>
+          <h3 className="h3-responsive" style={{ fontSize: "24px", fontFamily: 'Yantramanav, sans-serif', opacity: "0.7" }}>Make A Meaningful Connection</h3>
         </MDBCarouselCaption>
         <br>
         </br>
@@ -150,7 +154,7 @@ class Pets extends Component {
         </br>
         <Row>
           <Col size="md-4">
-            <h3 className="text-center" style={{fontSize: "24px", fontFamily: 'Yantramanav, sans-serif'}}>Subscribe</h3>
+            <h3 className="text-center" style={{ fontSize: "24px", fontFamily: 'Yantramanav, sans-serif' }}>Subscribe</h3>
             <br>
             </br>
             <form>
@@ -203,7 +207,7 @@ class Pets extends Component {
         </br>
         <Row>
           <Col size='md-4'>
-          <h3 className="text-center" style={{transform: "rotate(-10deg)", fontSize: "24px", fontFamily: 'Yantramanav, sans-serif'}}>Search</h3>
+            <h3 className="text-center" style={{ transform: "rotate(-10deg)", fontSize: "24px", fontFamily: 'Yantramanav, sans-serif' }}>Search</h3>
           </Col>
         </Row>
         <br>
@@ -271,8 +275,16 @@ class Pets extends Component {
             />
           ))}
         </Wrapper>
-      </Container>
+        <MDBFooter color="white" className="font-small pt-4 mt-4">
+          <MDBContainer fluid className="text-center text-md-left">
 
+            <MDBContainer fluid>
+            <a className="nav-link text-center" href="https://github.com/Jrofalk/Pet-Adopt" target="_blank"><FontAwesomeIcon icon={faGithubAlt} style={{ color: 'black' , fontSize: "24px"}}/></a>
+            </MDBContainer>
+          </MDBContainer>
+        </MDBFooter>
+
+      </Container>
     );
   }
 }

@@ -12,6 +12,10 @@ import PetCards from "../components/PetCards";
 import Wrapper from "../components/Wrapper";
 import UserCards from "../components/UserCards";
 // import ReactDOM from "react-dom";
+import { MDBCol, MDBRow, MDBFooter } from "mdbreact";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithubAlt } from '@fortawesome/free-brands-svg-icons';
+
 
 class Admin extends Component {
   state = {
@@ -199,6 +203,14 @@ class Admin extends Component {
             </MDBModalFooter>
           </MDBModal>
         </MDBContainer> */}
+        <MDBFooter color="white" className="font-small pt-4 mt-4">
+          <MDBContainer fluid className="text-center text-md-left">
+
+            <MDBContainer fluid>
+            <a className="nav-link text-center" href="https://github.com/Jrofalk/Pet-Adopt" target="_blank"><FontAwesomeIcon icon={faGithubAlt} style={{ color: 'black' , fontSize: "24px"}}/></a>
+            </MDBContainer>
+          </MDBContainer>
+        </MDBFooter>
       </Container>
     );
   }

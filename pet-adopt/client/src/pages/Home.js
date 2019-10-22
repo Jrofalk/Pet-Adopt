@@ -11,6 +11,10 @@ import { EventEmitter } from "events";
 import { MDBCarousel, MDBCarouselCaption, MDBCarouselInner, MDBCarouselItem, MDBView, MDBMask, MDBContainer } from
   "mdbreact";
 import { image } from "../assets/images/fritz.jpg";
+import { MDBCol, MDBRow, MDBFooter } from "mdbreact";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithubAlt } from '@fortawesome/free-brands-svg-icons';
+
 
 class Home extends Component {
   state = {
@@ -60,6 +64,14 @@ class Home extends Component {
             </MDBCarouselCaption>
           </MDBCarouselItem>
         </MDBCarouselInner>
+        <MDBFooter color="white" className="font-small pt-4 mt-4">
+          <MDBContainer fluid className="text-center text-md-left">
+
+            <MDBContainer fluid>
+            <a className="nav-link text-center" href="https://github.com/Jrofalk/Pet-Adopt" target="_blank"><FontAwesomeIcon icon={faGithubAlt} style={{ color: 'black' , fontSize: "24px"}}/></a>
+            </MDBContainer>
+          </MDBContainer>
+        </MDBFooter>
       </MDBCarousel>
     );
   }
