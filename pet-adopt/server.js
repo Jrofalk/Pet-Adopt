@@ -43,7 +43,7 @@ if (process.env.NODE_ENV === "production") {
 
 app.use(routes);
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/heroku_hkhvq2mb");
+mongoose.connect(process.env.MONGODB_URI || "mongodb://ds137508.mlab.com:37508/adoptablepets");
 
 // "mongodb://localhost/adoptablepets"
 
