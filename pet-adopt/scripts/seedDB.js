@@ -22,11 +22,11 @@ const petSeed = [
       1,
       1
     ],
-    image: "https://images.pexels.com/photos/104827/cat-pet-animal-domestic-104827.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",  
+    image: "https://news.wttw.com/sites/default/files/styles/full/public/article/image-non-gallery/Shelter%20Cats%201_0913.jpg?itok=v3OcT_yC",  
     date: new Date(Date.now())
   },
   {
-    name: "Mittens",
+    name: "Fritzi",
     petInfo: [
       2,
       2,
@@ -40,7 +40,7 @@ const petSeed = [
     date: new Date(Date.now())
   },
   {
-    name: "George",
+    name: "Mittens",
     petInfo: [
       3,
       3,
@@ -50,7 +50,35 @@ const petSeed = [
       1,
       1
     ],
-    image: "https://images.pexels.com/photos/104827/cat-pet-animal-domestic-104827.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+    image: "https://media.mnn.com/assets/images/2016/04/IMG_4146.JPG.653x0_q80_crop-smart.jpg",
+    date: new Date(Date.now())
+  },
+  {
+    name: "Kevin",
+    petInfo: [
+      2,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    image: "http://www.chicoanimalshelter.org/uploads/1/1/3/2/11329691/header_images/1562787520.jpg",
+    date: new Date(Date.now())
+  },
+  {
+    name: "Rexy",
+    petInfo: [
+      2,
+      1,
+      3,
+      1,
+      2,
+      3,
+      1
+    ],
+    image: "https://www.pasadenastarnews.com/wp-content/uploads/2019/04/A473131_Patches_Aust_Cattle_Dog_B-1.jpg?w=467",
     date: new Date(Date.now())
   }
 ];

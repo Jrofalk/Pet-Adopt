@@ -6,11 +6,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 
 
+
 function Nav() {
   return (
     <nav className="navbar navbar-expand-lg navbar-light">
       <a className="navbar-brand" href="/">
-        Pet Search
+        Pet Adopt
       </a>
       <div id="navbarNav">
         <ul className="navbar-nav">
