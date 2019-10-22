@@ -45,7 +45,7 @@ app.use(routes);
 
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/adoptablepets");
 
-// adoptablepets
+// "mongodb://localhost/adoptablepets"
 
 
 // Start the API server
