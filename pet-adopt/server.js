@@ -45,7 +45,7 @@ app.use(routes);
 
 // mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/adoptablepets");
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://jrfalk:Tomiko101387@ds137508.mlab.com:37508/heroku_hkhvq2mb")
+mongoose.connect(process.env.MONGODB_URI || "mongodb://<jrfalk>:<Tomiko101387>@ds137508.mlab.com:37508/heroku_hkhvq2mb")
 
 // Start the API server
 app.listen(PORT, function() {
