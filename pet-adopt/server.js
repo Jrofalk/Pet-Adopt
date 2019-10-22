@@ -43,7 +43,9 @@ if (process.env.NODE_ENV === "production") {
 
 app.use(routes);
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/adoptablepets");
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/heroku_hkhvq2mb");
+
+// adoptablepets
 
 
 // Start the API server
