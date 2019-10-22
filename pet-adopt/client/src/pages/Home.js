@@ -11,7 +11,6 @@ import { EventEmitter } from "events";
 import { MDBCarousel, MDBCarouselCaption, MDBCarouselInner, MDBCarouselItem, MDBView, MDBMask, MDBContainer } from
   "mdbreact";
 import { image } from "../assets/images/fritz.jpg";
-import { FooterPage } from "../components/Footer"
 
 class Home extends Component {
   state = {
