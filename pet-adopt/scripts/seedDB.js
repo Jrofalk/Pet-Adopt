@@ -7,7 +7,7 @@ const db = require("../models");
 
 mongoose.connect(
   process.env.MONGODB_URI ||
-  "mongodb://localhost/heroku_hkhvq2mb"
+  "mongodb://localhost/adoptablepets"
 );
 
 const petSeed = [
