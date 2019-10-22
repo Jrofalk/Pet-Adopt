@@ -13,6 +13,7 @@ import { MDBCarousel, MDBCarouselCaption, MDBCarouselInner, MDBCarouselItem, MDB
   "mdbreact";
 
 
+
 class Pets extends Component {
   state = {
     pets: [],
@@ -132,135 +133,149 @@ class Pets extends Component {
   render() {
     return (
       <Container fluid>
-          <MDBView>
-            <img style={{ height: "550px" }, {width:'1000px'}}
-              className="d-block w-100"
-                  src="https://static01.nyt.com/images/2018/09/01/science/01TB-CATS/01TB-CATS-facebookJumbo.jpg"
-              alt="First slide"
-            />
-            <MDBMask overlay="black-light" />
-          </MDBView>
-          <MDBCarouselCaption style={{ top: "675px" }}>
-            <h3 className="h3-responsive">Make A Meaniningful Connection</h3>
-          </MDBCarouselCaption>
-          <br>
-          </br>
-          <br>
-          </br>
-          <Row>
-            <Col size="md-4">
-              <form>
-                <Input
-                  value={this.state.name}
-                  onChange={this.handleInputChange}
-                  name="name"
-                  placeholder="Name (Required)"
-                />
-                <Input
-                  value={this.state.email}
-                  onChange={this.handleInputChange}
-                  name="email"
-                  placeholder="Email"
-                />
-                <Input
-                  value={this.state.telephone}
-                  onChange={this.handleInputChange}
-                  name="telephone"
-                  placeholder="Telephone"
-                />
-                <Input
-                  value={this.state.address}
-                  onChange={this.handleInputChange}
-                  name="address"
-                  placeholder="Street Address"
-                />
-                <Input
-                  value={this.state.city}
-                  onChange={this.handleInputChange}
-                  name="city"
-                  placeholder="City"
-                />
-                <Input
-                  value={this.state.state}
-                  onChange={this.handleInputChange}
-                  name="state"
-                  placeholder="State"
-                />
-                <Input
-                  value={this.state.zip}
-                  onChange={this.handleInputChange}
-                  name="zip"
-                  placeholder="Zip"
-                />
-              </form>
-            </Col>
-            <Col size='md-4'>
-              <form>
-                <label>How many hours per day can you dedicate to your pet?</label>
-                <SelectOne value={this.state.choiceOne}
-                  onChange={this.handleInputChange}
-                  name="choiceOne"
-                />
-                <label>How many pets (cats/dogs) currently reside within your household?</label>
-                <SelectTwo value={this.state.choiceTwo}
-                  onChange={this.handleInputChange}
-                  name="choiceTwo"
-                />
-                <label>If there is another pet present in your household, is it a dog or cat?</label>
-                <SelectFour value={this.state.choiceFive}
-                  onChange={this.handleInputChange}
-                  name="choiceFive"
-                />
-
-                <label>How many children currently reside in your home?</label>
-                <SelectTwo value={this.state.choiceThree}
-                  onChange={this.handleInputChange}
-                  name="choiceThree"
-                />
-              </form>
-            </Col>
-            <Col size='md-4'>
-              <form>
-                <label>Would you be willing to care for a pet with special medical needs? (Administering medication, etc.)</label>
-                <SelectThree value={this.state.choiceFour}
-                  onChange={this.handleInputChange}
-                  name="choiceFour"
-                />
-                <label>Would you be willing to commit to at least one long walk a day?</label>
-                <SelectFive value={this.state.choiceSix}
-                  onChange={this.handleInputChange}
-                  name="choiceSix"
-                />
-                <label>How would you describe the relative size of your living space?</label>
-                <SelectSix value={this.state.choiceSeven}
-                  onChange={this.handleInputChange}
-                  name="choiceSeven"
-                />
-                <FormBtn
-                  // onClick={this.handleFormSubmit}
-                  // onClick={this.pushToUserInfo}
-                  onClick={this.clickFindPets}
-                >
-                  Find Pet
-              </FormBtn>
-              </form>
-            </Col>
-          </Row>
-          <Wrapper>
-            {this.state.matches.map(match => (
-              <MatchCard
-                key={match.id}
-                name={match.name}
-                image={match.image}
-
+        <MDBView>
+          <img style={{ height: "550px" }, { width: '1000px' }}
+            className="d-block w-100"
+            src="https://static01.nyt.com/images/2018/09/01/science/01TB-CATS/01TB-CATS-facebookJumbo.jpg"
+            alt="First slide"
+          />
+          <MDBMask overlay="black-light" />
+        </MDBView>
+        <MDBCarouselCaption style={{ top: "675px" }}>
+          <h3 className="h3-responsive" style={{fontSize: "24px", fontFamily: 'Yantramanav, sans-serif', opacity: "0.7"}}>Make A Meaningful Connection</h3>
+        </MDBCarouselCaption>
+        <br>
+        </br>
+        <br>
+        </br>
+        <Row>
+          <Col size="md-4">
+            <h3 className="text-center" style={{fontSize: "24px", fontFamily: 'Yantramanav, sans-serif'}}>Subscribe</h3>
+            <br>
+            </br>
+            <form>
+              <Input
+                value={this.state.name}
+                onChange={this.handleInputChange}
+                name="name"
+                placeholder="Name (Required)"
               />
-            ))}
-          </Wrapper>
+              <Input
+                value={this.state.email}
+                onChange={this.handleInputChange}
+                name="email"
+                placeholder="Email"
+              />
+              <Input
+                value={this.state.telephone}
+                onChange={this.handleInputChange}
+                name="telephone"
+                placeholder="Telephone"
+              />
+              <Input
+                value={this.state.address}
+                onChange={this.handleInputChange}
+                name="address"
+                placeholder="Street Address"
+              />
+              <Input
+                value={this.state.city}
+                onChange={this.handleInputChange}
+                name="city"
+                placeholder="City"
+              />
+              <Input
+                value={this.state.state}
+                onChange={this.handleInputChange}
+                name="state"
+                placeholder="State"
+              />
+              <Input
+                value={this.state.zip}
+                onChange={this.handleInputChange}
+                name="zip"
+                placeholder="Zip"
+              />
+            </form>
+          </Col>
+        </Row>
+        <br>
+        </br>
+        <Row>
+          <Col size='md-4'>
+          <h3 className="text-center" style={{transform: "rotate(-10deg)", fontSize: "24px", fontFamily: 'Yantramanav, sans-serif'}}>Search</h3>
+          </Col>
+        </Row>
+        <br>
+        </br>
+        <Row>
+          <Col size='md-4'>
+            <form>
+              <label>How many hours per day can you dedicate to your pet?</label>
+              <SelectOne value={this.state.choiceOne}
+                onChange={this.handleInputChange}
+                name="choiceOne"
+              />
+              <label>How many pets (cats/dogs) currently reside within your household?</label>
+              <SelectTwo value={this.state.choiceTwo}
+                onChange={this.handleInputChange}
+                name="choiceTwo"
+              />
+              <label>If there is another pet present in your household, is it a dog or cat?</label>
+              <SelectFour value={this.state.choiceFive}
+                onChange={this.handleInputChange}
+                name="choiceFive"
+              />
+
+              <label>How many children currently reside in your home?</label>
+              <SelectTwo value={this.state.choiceThree}
+                onChange={this.handleInputChange}
+                name="choiceThree"
+              />
+            </form>
+          </Col>
+          <Col size='md-4'>
+            <form>
+              <label>Would you be willing to care for a pet with special medical needs? (Administering medication, etc.)</label>
+              <SelectThree value={this.state.choiceFour}
+                onChange={this.handleInputChange}
+                name="choiceFour"
+              />
+              <label>Would you be willing to commit to at least one long walk a day?</label>
+              <SelectFive value={this.state.choiceSix}
+                onChange={this.handleInputChange}
+                name="choiceSix"
+              />
+              <label>How would you describe the relative size of your living space?</label>
+              <SelectSix value={this.state.choiceSeven}
+                onChange={this.handleInputChange}
+                name="choiceSeven"
+              />
+              <FormBtn
+                // onClick={this.handleFormSubmit}
+                // onClick={this.pushToUserInfo}
+                onClick={this.clickFindPets}
+              >
+                Find Pet
+              </FormBtn>
+            </form>
+          </Col>
+        </Row>
+        <Wrapper>
+          {this.state.matches.map(match => (
+            <MatchCard
+              key={match.id}
+              name={match.name}
+              image={match.image}
+
+            />
+          ))}
+        </Wrapper>
       </Container>
 
-        );
-      }
-    }
-    
-    export default Pets;
-    
+    );
+  }
+}
+
+export default Pets;
+

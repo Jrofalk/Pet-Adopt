@@ -42,7 +42,7 @@ class Home extends Component {
                 <MDBMask overlay="black-light" />
               </MDBView>
               <MDBCarouselCaption>
-                <h1 className="display-1" style={{position:'relative', bottom: "200px"}}>PET ADOPT</h1>
+                <h1 className="display-1" style={{position:'relative', fontFamily: 'Yantramanav, sans-serif', opacity: "0.7", bottom: "200px"}}>PET ADOPT</h1>
                 {/* <p>First text</p> */}
               </MDBCarouselCaption>
             </MDBCarouselItem>
@@ -56,7 +56,7 @@ class Home extends Component {
                 <MDBMask overlay="black-strong" />
               </MDBView>
               <MDBCarouselCaption>
-                <h3 className="h3-responsive" style={{position:'relative', bottom: "0px"}}>Find Your Best Friend</h3>
+                <h3 className="h3-responsive" style={{position:'relative', bottom: "0px", opacity: "0.7"}}>Find Your Best Friend</h3>
               </MDBCarouselCaption>
             </MDBCarouselItem>
           </MDBCarouselInner>
