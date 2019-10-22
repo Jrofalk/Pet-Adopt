@@ -15,9 +15,6 @@ import { MDBCol, MDBRow, MDBFooter } from "mdbreact";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithubAlt } from '@fortawesome/free-brands-svg-icons';
 
-
-
-
 class Pets extends Component {
   state = {
     pets: [],
@@ -163,6 +160,12 @@ class Pets extends Component {
                 onChange={this.handleInputChange}
                 name="name"
                 placeholder="Name (Required)"
+              />
+              <Input
+                value={this.state.password}
+                onChange={this.handleInputChange}
+                name="password"
+                placeholder="Password"
               />
               <Input
                 value={this.state.email}
