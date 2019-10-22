@@ -258,7 +258,7 @@ class Pets extends Component {
                 onChange={this.handleInputChange}
                 name="choiceSeven"
               />
-              <FormBtn
+              <FormBtn 
                 // onClick={this.handleFormSubmit}
                 // onClick={this.pushToUserInfo}
                 onClick={this.clickFindPets}
