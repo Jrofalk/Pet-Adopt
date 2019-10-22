@@ -41,12 +41,11 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
-app.use(routes);
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/heroku_hkhvq2mb");
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/adoptablepets");
 
 // "mongodb://localhost/adoptablepets"
-
+app.use(routes);
 
 // Start the API server
 app.listen(PORT, function() {
