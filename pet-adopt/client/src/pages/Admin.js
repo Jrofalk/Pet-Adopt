@@ -27,7 +27,18 @@ class Admin extends Component {
     petsName: "",
     petImage: "",
     matches: [],
-    userMatches: []
+    userMatches: [],
+    newPetName: "",
+    newPetDescription: "",
+    newPetImage: "",
+    newPetInfo: [],
+    responseOne: "",
+    responseTwo: "",
+    responseThree: "",
+    responseFour: "",
+    responseFive: "",
+    responseSix: "",
+    responseSeven: ""
   };
 
   toggle = () => {
@@ -38,9 +49,6 @@ class Admin extends Component {
 
   componentDidMount() {
     // this.loadPets();
-    this.setState({
-      modal: !this.state.modal
-    });
   }
 
   handleFormSubmit = event => {
@@ -63,6 +71,38 @@ class Admin extends Component {
     //    console.log(response)
     //  }
     //   )
+  }
+
+  completeSavePet = () => {
+    this.pushToNewPetInfo();
+    this.toggle();
+
+  }
+
+  handleFormSubmitPet = () => {
+    let petData = {
+      name: this.state.newPetName,
+      image: this.state.newPetImage,
+      description: this.state.newPetDescription,
+      petInfo: this.state.newPetInfo
+    }
+    API.savePet(petData
+    )
+      .then(console.log("Pet saved"));
+  }
+
+  pushToNewPetInfo = () => {
+    let choices = this.state.newPetInfo;
+    choices.push(this.state.responseOne);
+    choices.push(this.state.responseTwo);
+    choices.push(this.state.responseThree);
+    choices.push(this.state.responseFour);
+    choices.push(this.state.responseFive);
+    choices.push(this.state.responseSix);
+    choices.push(this.state.responseSeven);
+    this.setState({ newPetInfo: choices })
+    // console.log(this.state.userInfo);
+    this.handleFormSubmitPet();
   }
 
   handleDeletePet = event => {
@@ -117,6 +157,10 @@ class Admin extends Component {
   render() {
     return (
       <Container fluid>
+        <br>
+        </br>
+        <br>
+        </br>
         <Row>
           <Col size="md-6">
             <form>
@@ -140,16 +184,14 @@ class Admin extends Component {
                 onClick={this.handleFindPet}>
                 Search by Pet Name
               </FormBtn>
-              {/* <FormBtn
-                // onClick={this.handleFormSubmit}
-                // onClick={this.pushToUserData}
-                // onClick={this.clickFindPets}
-
-                onClick={this.handleFormSubmit}
-              >
-                Submit
-              </FormBtn> */}
             </form>
+          </Col>
+        </Row>
+        <Row>
+          <Col size="md-6">
+            <FormBtn
+              color="white" onClick={this.toggle}>Add Pet
+              </FormBtn>
           </Col>
         </Row>
         <Wrapper>
@@ -177,37 +219,79 @@ class Admin extends Component {
             />
           ))}
         </Wrapper>
-        {/* <MDBContainer> */}
-        {/* <MDBBtn onClick={this.toggle}>Modal</MDBBtn> */}
-        {/* <MDBModal isOpen={this.state.modal} toggle={this.toggle}>
-            <MDBModalHeader toggle={this.toggle}>Admin</MDBModalHeader>
+        <MDBContainer>
+          <MDBModal isOpen={this.state.modal} toggle={this.toggle} className="modal-dialog-scrollable">
             <MDBModalBody>
               <MDBInput
                 onChange={this.handleInputChange}
-                value={this.state.email}
-                name="email"
-                label="Email"> */}
-        {/* {this.state.name} */}
-        {/* </MDBInput>
+                value={this.state.newPetName}
+                name="newPetName"
+                label="Name">
+              </MDBInput>
               <MDBInput
                 onChange={this.handleInputChange}
-                value={this.state.password}
-                name="password"
-                label="Password"> */}
-        {/* {this.state.email} */}
-        {/* </MDBInput>
+                value={this.state.newPetDescription}
+                name="newPetDescription"
+                label="Description">
+              </MDBInput>
+              <MDBInput
+                onChange={this.handleInputChange}
+                value={this.state.newPetImage}
+                name="newPetImage"
+                label="Image (URL)">
+              </MDBInput>
+              <MDBInput
+                onChange={this.handleInputChange}
+                value={this.state.responseOne}
+                name="responseOne"
+                label="Question One">
+              </MDBInput>
+              <MDBInput
+                onChange={this.handleInputChange}
+                value={this.state.responseTwo}
+                name="responseTwo"
+                label="Question Two">
+              </MDBInput>
+              <MDBInput
+                onChange={this.handleInputChange}
+                value={this.state.responseThree}
+                name="responseThree"
+                label="Question Three">
+              </MDBInput>
+              <MDBInput
+                onChange={this.handleInputChange}
+                value={this.state.responseFour}
+                name="responseFour"
+                label="Question Four">
+              </MDBInput>
+              <MDBInput
+                onChange={this.handleInputChange}
+                value={this.state.responseFive}
+                name="responseFive"
+                label="Question Five">
+              </MDBInput>
+              <MDBInput
+                onChange={this.handleInputChange}
+                value={this.state.responseSix}
+                name="responseSix"
+                label="Question Six">
+              </MDBInput>
+              <MDBInput
+                onChange={this.handleInputChange}
+                value={this.state.responseSeven}
+                name="responseSeven"
+                label="Question Seven">
+              </MDBInput>
             </MDBModalBody>
             <MDBModalFooter>
-              <MDBBtn color="secondary" onClick={this.toggle}>Close</MDBBtn>
-              <MDBBtn color="primary" onClick={this.handleFormSubmit}>Submit</MDBBtn>
+              <MDBBtn color="white" onClick={this.completeSavePet}>Add</MDBBtn>
             </MDBModalFooter>
           </MDBModal>
-        </MDBContainer> */}
+        </MDBContainer>
         <MDBFooter color="white" className="font-small pt-4 mt-4 fixed-bottom">
           <MDBContainer fluid className="text-center text-md-left">
-
             <MDBContainer fluid>
-            <a className="nav-link text-center" href="https://github.com/Jrofalk/Pet-Adopt" target="_blank"><FontAwesomeIcon icon={faGithubAlt} style={{ color: 'black' , fontSize: "24px"}}/></a>
+              <a className="nav-link text-center" href="https://github.com/Jrofalk/Pet-Adopt" target="_blank"><FontAwesomeIcon icon={faGithubAlt} style={{ color: 'black', fontSize: "24px" }} /></a>
             </MDBContainer>
           </MDBContainer>
         </MDBFooter>
@@ -217,20 +301,4 @@ class Admin extends Component {
 }
 
 export default Admin;
-//CREATE Create route to create pet on admin side
-
-//CREATE WAY TO "LOVE" PETS AND DISPLAY ON DETAILS PAGE LIKE BOOK SEARCH, THEN ALLOW ADMIN TO SEE LOVED PETS VIA SEARCH
-//THIS REQUIRES SEARCH BY A SPECIFIC CRITERIA. LOOK UP HOW TO DO
-
-//Put github icon in footer
-
-//IMPORTANT
-
-//Create fake login for admin side
-
-
-//Create create route for a new pet on admin side (2)
-
-//Launch on Heroku (2) DO NOT USE MERN README PER ERICS SLACK MESSAGE
-
 

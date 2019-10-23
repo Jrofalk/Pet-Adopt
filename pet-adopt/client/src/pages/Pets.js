@@ -56,7 +56,6 @@ class Pets extends Component {
     API.saveUser(userData
     )
       .then(console.log("User saved"));
-
   }
 
 
