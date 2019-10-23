@@ -268,9 +268,11 @@ class Pets extends Component {
             </form>
           </Col>
         </Row>
+        <br>
+        </br>
         <Wrapper>
           {this.state.matches.map(match => (
-            <MatchCard
+            <MatchCard 
               key={match.id}
               name={match.name}
               image={match.image}
