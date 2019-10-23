@@ -90,7 +90,7 @@ class Pets extends Component {
             var difference = Math.abs(parseInt(this.state.userInfo[x]) - res.data[i].petInfo[x])
             totalDifference += difference;
           }
-          eachDiff.push({ totalDifference: totalDifference, id: res.data[i]._id, name: res.data[i].name, image: res.data[i].image });
+          eachDiff.push({ totalDifference: totalDifference, id: res.data[i]._id, name: res.data[i].name, image: res.data[i].image, description: res.data[i].description  });
           //Code commented out below provides a single match
           // if (totalDifference < minimumDifference) {
           //   match = i;
@@ -228,7 +228,7 @@ class Pets extends Component {
                 onChange={this.handleInputChange}
                 name="choiceTwo"
               />
-              <label>If there is another pet present in your household, is it a dog or cat?</label>
+              <label>If there is another pet present in your household, are they a dog or cat?</label>
               <SelectFour value={this.state.choiceFive}
                 onChange={this.handleInputChange}
                 name="choiceFive"
@@ -274,6 +274,7 @@ class Pets extends Component {
               key={match.id}
               name={match.name}
               image={match.image}
+              description={match.description}
 
             />
           ))}
