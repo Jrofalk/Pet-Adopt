@@ -2,11 +2,11 @@
 
 Pet Adopt is a full-stack application that connects users with an animal companion that matches both their needs and those of the pet to be adopted. Intended for use in a shelter environment, Pet Adopt asks a user several questions and then provides a set of matches based on their responses. The application also includes a stream-lined administrative section that allows staff to search for pets and users, contact potential adopters, and add animals to the shelter database.
 
-##Deployed Link:
+## Deployed Link:
 
 [https://afternoon-bastion-93138.herokuapp.com]
 
-##Directions:
+## Directions:
 
 Selecting the "Search" icon directs users to the search page. They are able to subscribe to a shelter's mailing list via the subscribe section by entering their name, address, email address, etc. into the respective blanks.
 
