@@ -14,7 +14,7 @@ The search section allows users to enter select responses to the questions prese
 
 Selecting the "Admin" icon directs a user to the administrative section. Here shelter staff is able to search for potential adopters or animal companions by name. After searching for a prospective adopter, administration is able to contact that person(s) via email. Administration may also delete or add pets to the database via the respective icons on the page.
 
-## Pet-Adopt was built using the following technologies:
+## Pet Adopt was built using the following technologies:
 
 * Javascript
 * Express
