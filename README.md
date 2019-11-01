@@ -4,7 +4,7 @@ Pet Adopt is a full-stack application that connects users with an animal compani
 
 ## Deployed Link:
 
-[https://afternoon-bastion-93138.herokuapp.com]
+https://afternoon-bastion-93138.herokuapp.com
 
 ## Directions:
 
