@@ -1,4 +1,4 @@
-# Pet-Adopt
+# Pet Adopt
 
 Pet Adopt is a full-stack application that connects users with an animal companion that matches both their needs and those of the pet to be adopted. Intended for use in a shelter environment, Pet Adopt asks a user several questions and then provides a set of matches based on their responses. The application also includes a stream-lined administrative section that allows staff to search for pets and users, contact potential adopters, and add animals to the shelter database.
 
